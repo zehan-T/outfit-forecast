@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-labelledby="title">
+  <title id="title">Snow</title>
+  <path d="M20 54h54a14 14 0 0 0 1-28 23 23 0 0 0-44-3 17 17 0 0 0-11 31Z" fill="#D7E2E2" stroke="#26324A" stroke-width="5" stroke-linejoin="round"/>
+  <g fill="none" stroke="#5B9AAA" stroke-width="4" stroke-linecap="round">
+    <path d="M27 65v18M19 70l16 9M35 70l-16 9M50 65v18M42 70l16 9M58 70l-16 9M73 65v18M65 70l16 9M81 70l-16 9"/>
+  </g>
+</svg>

@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f5eee2">
+    <meta name="description" content="How Outfit Forecast creates weather-based clothing recommendations.">
+    <title>About This Recommendation</title>
+    <link rel="stylesheet" href="styles.css">
+    <script type="module" src="src/about.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to the information</a>
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="Outfit Forecast home">
+        <span class="brand-mark" aria-hidden="true">♪</span>
+        <span>Outfit Forecast</span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <a href="index.html">Forecast</a>
+        <a aria-current="page" href="about.html">About</a>
+      </nav>
+    </header>
+
+    <main id="main-content" class="about-main">
+      <header class="about-hero">
+        <div>
+          <p class="eyebrow">Method, sources, and privacy</p>
+          <h1>About This Recommendation</h1>
+          <p class="lede">Outfit Forecast turns a seven-day weather record into one quick clothing suggestion and only the reminders that apply.</p>
+          <a class="button button-primary inline-button" href="index.html">Back to forecast</a>
+        </div>
+        <div class="creator-card">
+          <img src="reference/character-master-front-transparent-v2.png" alt="The Outfit Forecast character in a casual T-shirt and shorts">
+          <div><span class="eyebrow">Created by</span><strong>Zehan</strong></div>
+        </div>
+      </header>
+
+      <div class="about-grid">
+        <section class="info-card" aria-labelledby="data-heading">
+          <span class="info-number" aria-hidden="true">01</span>
+          <h2 id="data-heading">Weather data</h2>
+          <p>The prototype uses <a href="https://open-meteo.com/en/docs" rel="external">Open-Meteo</a> for current conditions and a seven-day forecast. The displayed update time belongs to the selected weather record.</p>
+          <p>Forecasts are model-based estimates. Conditions and recommendations can change as newer data becomes available.</p>
+        </section>
+
+        <section class="info-card" aria-labelledby="method-heading">
+          <span class="info-number" aria-hidden="true">02</span>
+          <h2 id="method-heading">How recommendations work</h2>
+          <p>The app averages available campus-day “feels like” values and selects one of five outfit bands: hot, warm, mild, cool, or cold.</p>
+          <p>Rain, UV, heat, wind, winter precipitation, thunder, and meaningful later changes are evaluated independently, so reminders appear only when their rule applies.</p>
+        </section>
+
+        <section class="info-card info-card-wide" aria-labelledby="guidance-heading">
+          <span class="info-number" aria-hidden="true">03</span>
+          <h2 id="guidance-heading">Guidance sources</h2>
+          <ul class="link-list">
+            <li><a href="https://www.weather.gov/ama/heatindex" rel="external">NWS heat index</a></li>
+            <li><a href="https://www.weather.gov/safety/cold-during" rel="external">NWS cold safety</a></li>
+            <li><a href="https://forecast.weather.gov/glossary.php?word=chance" rel="external">NWS precipitation terminology</a></li>
+            <li><a href="https://www.weather.gov/safety/lightning-safety" rel="external">NWS lightning safety</a></li>
+            <li><a href="https://www.weather.gov/media/mhx/Winter2020.pdf" rel="external">NWS winter guidance</a></li>
+            <li><a href="https://www.epa.gov/sunsafety/uv-index-scale-0" rel="external">EPA UV Index</a></li>
+          </ul>
+        </section>
+
+        <section class="info-card" aria-labelledby="privacy-heading">
+          <span class="info-number" aria-hidden="true">04</span>
+          <h2 id="privacy-heading">Privacy</h2>
+          <p>Location permission is requested only after you choose “Use my location.” Exact device coordinates are used for the immediate request and rounded to two decimal places before local storage.</p>
+          <p>Only the most recent place and its non-personal outfit choices remain on this device. There are no accounts, analytics, or cross-device tracking.</p>
+          <button class="button button-secondary" id="clear-data" type="button">Clear saved data</button>
+          <p class="field-message" id="clear-status" role="status" aria-live="polite"></p>
+        </section>
+
+        <section class="info-card" aria-labelledby="credits-heading">
+          <span class="info-number" aria-hidden="true">05</span>
+          <h2 id="credits-heading">Art credits</h2>
+          <p>AI-assisted character artwork generated with OpenAI, creatively directed, selected, and edited by Zehan for this prototype.</p>
+          <p>Weather and reminder icons were created for this prototype by Zehan with Agent assistance.</p>
+        </section>
+
+        <section class="info-card info-card-wide" aria-labelledby="limits-heading">
+          <span class="info-number" aria-hidden="true">06</span>
+          <h2 id="limits-heading">Limitations</h2>
+          <p>This is general clothing guidance, not a safety alert or medical recommendation. Comfort varies, forecasts change, and official alerts plus appropriate professional advice take priority.</p>
+        </section>
+      </div>
+    </main>
+
+    <footer><p><a href="index.html">Return to Outfit Forecast</a></p></footer>
+  </body>
+</html>

@@ -1,0 +1,222 @@
+{
+  "expectedAssetCount": 36,
+  "characterMaster": {
+    "path": "reference/character-master-front-transparent-v2.png",
+    "status": "approved"
+  },
+  "outfits": [
+    {
+      "path": "assets/characters/final/character-hot-a.png",
+      "category": "hot",
+      "variation": "a",
+      "alt": "Character wearing a midnight-navy blouse and ivory pleated skirt",
+      "status": "approved"
+    },
+    {
+      "path": "assets/characters/final/character-hot-b.png",
+      "category": "hot",
+      "variation": "b",
+      "alt": "Character wearing a muted-coral sleeveless blouse and champagne tailored shorts",
+      "status": "approved"
+    },
+    {
+      "path": "assets/characters/final/character-hot-c.png",
+      "category": "hot",
+      "variation": "c",
+      "alt": "Character wearing a pearl-white top and pistachio wide-leg trousers",
+      "status": "approved"
+    },
+    {
+      "path": "assets/characters/final/character-warm-a.png",
+      "category": "warm",
+      "variation": "a",
+      "alt": "Character wearing an ivory tailored waistcoat and caramel wide-leg trousers",
+      "status": "approved"
+    },
+    {
+      "path": "assets/characters/final/character-warm-b.png",
+      "category": "warm",
+      "variation": "b",
+      "alt": "Character wearing a midnight-navy top and champagne satin midi skirt",
+      "status": "approved"
+    },
+    {
+      "path": "assets/characters/final/character-warm-c.png",
+      "category": "warm",
+      "variation": "c",
+      "alt": "Character wearing a sage-green square-neck fit-and-flare midi dress",
+      "status": "approved"
+    },
+    {
+      "path": "assets/characters/final/character-mild-a.png",
+      "category": "mild",
+      "variation": "a",
+      "alt": "Character wearing an ivory long-sleeve blouse and indigo wide-leg jeans",
+      "status": "approved"
+    },
+    {
+      "path": "assets/characters/final/character-mild-b.png",
+      "category": "mild",
+      "variation": "b",
+      "alt": "Character wearing a cropped camel trench, navy top, and cream trousers",
+      "status": "approved"
+    },
+    {
+      "path": "assets/characters/final/character-mild-c.png",
+      "category": "mild",
+      "variation": "c",
+      "alt": "Character wearing a forest-green cropped jacket, champagne shell, and espresso midi skirt",
+      "status": "approved"
+    },
+    {
+      "path": "assets/characters/final/character-cool-a.png",
+      "category": "cool",
+      "variation": "a",
+      "alt": "Character wearing a camel cropped jacket, navy turtleneck, and burgundy wide-leg trousers",
+      "status": "approved"
+    },
+    {
+      "path": "assets/characters/final/character-cool-b.png",
+      "category": "cool",
+      "variation": "b",
+      "alt": "Character wearing a forest-green wool jacket, ivory cable-knit sweater, brown corduroy trousers, and ankle boots",
+      "status": "approved"
+    },
+    {
+      "path": "assets/characters/final/character-cool-c.png",
+      "category": "cool",
+      "variation": "c",
+      "alt": "Character wearing a charcoal cropped coat, asymmetric plum knit dress, dark tights, and knee-high boots",
+      "status": "approved"
+    },
+    {
+      "path": "assets/characters/final/character-cold-a.png",
+      "category": "cold",
+      "variation": "a",
+      "alt": "Character wearing a burgundy double-breasted coat, blush sweater, charcoal pleated skirt, and knee-high boots",
+      "status": "approved"
+    },
+    {
+      "path": "assets/characters/final/character-cold-b.png",
+      "category": "cold",
+      "variation": "b",
+      "alt": "Character wearing a camel cape coat, navy mock-neck sweater, chocolate trousers, and oxblood ankle boots",
+      "status": "approved"
+    },
+    {
+      "path": "assets/characters/final/character-cold-c.png",
+      "category": "cold",
+      "variation": "c",
+      "alt": "Character wearing a muted-teal shearling jacket, tonal ivory sweater and midi skirt, and charcoal knee-high boots",
+      "status": "approved"
+    }
+  ],
+  "wearableAccessories": [
+    {
+      "path": "assets/accessories/final/sun-visor.png",
+      "trigger": "uv",
+      "status": "approved"
+    },
+    {
+      "path": "assets/accessories/final/sunglasses.png",
+      "trigger": "uv",
+      "status": "approved"
+    },
+    {
+      "path": "assets/accessories/final/umbrella.png",
+      "trigger": "precipitation",
+      "status": "approved"
+    },
+    {
+      "path": "assets/accessories/final/cold-wind-scarf-gloves.png",
+      "trigger": "cold-wind",
+      "status": "approved"
+    }
+  ],
+  "weatherIcons": [
+    {
+      "path": "assets/icons/weather/final/clear.svg",
+      "condition": "clear",
+      "status": "approved"
+    },
+    {
+      "path": "assets/icons/weather/final/partly-cloudy.svg",
+      "condition": "partly-cloudy",
+      "status": "approved"
+    },
+    {
+      "path": "assets/icons/weather/final/cloudy.svg",
+      "condition": "cloudy",
+      "status": "approved"
+    },
+    {
+      "path": "assets/icons/weather/final/fog.svg",
+      "condition": "fog",
+      "status": "approved"
+    },
+    {
+      "path": "assets/icons/weather/final/drizzle.svg",
+      "condition": "drizzle",
+      "status": "approved"
+    },
+    {
+      "path": "assets/icons/weather/final/rain.svg",
+      "condition": "rain",
+      "status": "approved"
+    },
+    {
+      "path": "assets/icons/weather/final/freezing-rain.svg",
+      "condition": "freezing-rain",
+      "status": "approved"
+    },
+    {
+      "path": "assets/icons/weather/final/snow.svg",
+      "condition": "snow",
+      "status": "approved"
+    },
+    {
+      "path": "assets/icons/weather/final/showers.svg",
+      "condition": "showers",
+      "status": "approved"
+    },
+    {
+      "path": "assets/icons/weather/final/thunder.svg",
+      "condition": "thunder",
+      "status": "approved"
+    }
+  ],
+  "reminderIcons": [
+    {
+      "path": "assets/icons/reminders/final/umbrella.svg",
+      "reminder": "umbrella",
+      "status": "approved"
+    },
+    {
+      "path": "assets/icons/reminders/final/sun-protection.svg",
+      "reminder": "sun-protection",
+      "status": "approved"
+    },
+    {
+      "path": "assets/icons/reminders/final/water.svg",
+      "reminder": "hydration",
+      "status": "approved"
+    },
+    {
+      "path": "assets/icons/reminders/final/wind-layer.svg",
+      "reminder": "wind-layer",
+      "status": "approved"
+    },
+    {
+      "path": "assets/icons/reminders/final/waterproof-footwear.svg",
+      "reminder": "waterproof-footwear",
+      "status": "approved"
+    },
+    {
+      "path": "assets/icons/reminders/final/thunder-safety.svg",
+      "reminder": "thunder-safety",
+      "status": "approved"
+    }
+  ],
+  "decorativeMotif": null,
+  "credit": "AI-assisted character artwork generated with OpenAI, creatively directed, selected, and edited by Zehan for this prototype."
+}

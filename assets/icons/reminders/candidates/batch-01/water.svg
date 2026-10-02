@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-labelledby="title">
+  <title id="title">Bring water</title>
+  <path d="M35 13h26v12l6 8v46c0 4-3 7-7 7H36c-4 0-7-3-7-7V33l6-8Z" fill="#EAF3F1" stroke="#26324A" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M35 20h26M31 52h34v27c0 3-2 5-5 5H36c-3 0-5-2-5-5Z" fill="#5BA4B5"/>
+  <path d="M36 60c8 3 16-3 28 0" fill="none" stroke="#DDF3F2" stroke-width="4" stroke-linecap="round"/>
+  <path d="M39 13V7h18v6" fill="#D9A441" stroke="#26324A" stroke-width="5" stroke-linejoin="round"/>
+</svg>

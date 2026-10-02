@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 96" role="img" aria-labelledby="title">
+  <title id="title">Decorative music and weather motif</title>
+  <g fill="none" stroke="#26324A" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M60 22v47M60 28l40-9v43"/>
+  </g>
+  <ellipse cx="48" cy="72" rx="14" ry="10" transform="rotate(-13 48 72)" fill="#D9A441" stroke="#26324A" stroke-width="5"/>
+  <ellipse cx="89" cy="65" rx="14" ry="10" transform="rotate(-13 89 65)" fill="#D9A441" stroke="#26324A" stroke-width="5"/>
+  <g fill="none" stroke="#5B9AAA" stroke-width="5" stroke-linecap="round">
+    <path d="M18 35h25c8 0 8-9 1-9M15 48h31M111 42h31c8 0 8 9 1 9"/>
+  </g>
+  <g fill="#E8B750" stroke="#26324A" stroke-width="2.5" stroke-linejoin="round">
+    <path d="m126 13 3 8 8 3-8 3-3 8-3-8-8-3 8-3Z"/>
+    <path d="m145 61 2 6 6 2-6 2-2 6-2-6-6-2 6-2Z"/>
+  </g>
+</svg>

@@ -1,0 +1,49 @@
+# Verification Record
+
+Local release-candidate verification for Outfit Forecast. Last updated October
+2, 2026.
+
+## Current result
+
+- Browser-native automated suite: **41/41 passed**.
+- Production manifest: **36 declared, 36 unique, 0 missing**.
+- Credential-pattern scan: **no matches** outside excluded artwork/test output.
+- Live Open-Meteo smoke checks: complete seven-day forecasts returned for
+  Austin and Chicago with local timezone and imperial values.
+- Layout checks: 320, 375, 767, 1024, 1365, and 1440 CSS px passed. The 320 px
+  reflow check also represents a 640 px viewport at 200% zoom.
+- Temporary Chromium profile directories are excluded by `.gitignore`; retained
+  screenshots in `tests/artifacts/` are verification evidence.
+
+## Requirement trace
+
+| Requirement | Evidence | Result |
+| --- | --- | --- |
+| R1 two screens and navigation | Browser tests 3, 4, 36, 37 | Pass |
+| R2 visible selected-day weather evidence | Live Austin render; browser layout tests | Pass |
+| R3 US place/ZIP search and ambiguity | Browser tests 24–26; US-filtered provider module | Pass |
+| R4 activation-only device location | Browser test 29 | Pass |
+| R5 seven local dates and shared selection | Browser tests 1, 14, 27; live render | Pass |
+| R6 five categories, three outfits, accessory layers | Browser tests 2, 6, 15, 30, 31 | Pass |
+| R7 exact affirmation and private feedback | Browser tests 3, 39, 41 | Pass |
+| R8 Fashion show cycle and persistence | Browser tests 17, 19, 20 | Pass |
+| R9 applicable, prioritized reminders | Browser tests 9, 10, 18 | Pass |
+| R10 concrete Changes later rules | Browser tests 11, 12, 18 | Pass |
+| R11 phone information order and controls | Browser tests 31–33, 35 | Pass |
+| R12 laptop two-column composition | Browser test 34 | Pass |
+| R13 fluid reflow and zoom equivalent | Browser tests 32, 34, 35, 37 | Pass |
+| R14 About identity, method, sources, privacy, credits | Browser tests 4, 36, 37 | Pass |
+| R15 loading/failure/retry behavior | Browser tests 26, 28, 29, 39, 41 | Pass |
+| R16 optional and critical missing data | Browser tests 10, 13, 28 | Pass |
+| R17 WCAG-oriented semantics and interaction | Browser tests 31–35, 37–41 | Pass; real assistive-technology check remains |
+| R18 limited local storage and clearing | Browser tests 19–23, 41 | Pass |
+| R19 Open-Meteo request contract/no secret | Browser tests 25, 27; live two-place check; secret scan | Pass |
+| R20 public HTTPS deployment | Checkpoint 11 | Pending |
+| R21 three-peer usability study and revision | Usability phase | Pending |
+
+## Known remaining work
+
+- Developer visual review and requested refinements.
+- Three anonymized peer usability sessions and one evidence-supported revision.
+- Public GitHub Pages deployment and independent phone/laptop verification.
+- Real-device screen-reader smoke check.

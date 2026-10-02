@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-labelledby="title">
+  <title id="title">Use sun protection</title>
+  <g fill="none" stroke="#26324A" stroke-width="4" stroke-linecap="round"><path d="M67 9v7M67 48v7M47 29h7M80 29h7M53 15l5 5M76 38l5 5M53 43l5-5M76 20l5-5"/></g>
+  <circle cx="67" cy="29" r="12" fill="#D9A441" stroke="#26324A" stroke-width="4"/>
+  <path d="M21 30h22l5 13H16Z" fill="#E8D4A8" stroke="#26324A" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M18 43h32c9 0 14 4 18 9-20 4-39 4-58 0 2-5 4-7 8-9Z" fill="#D9A441" stroke="#26324A" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M20 56c12 3 24 3 36 0" fill="none" stroke="#34507A" stroke-width="5" stroke-linecap="round"/>
+</svg>

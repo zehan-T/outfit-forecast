@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f5eee2">
+    <meta name="description" content="A weather-based outfit planner for US college students.">
+    <title>Outfit Forecast</title>
+    <link rel="stylesheet" href="styles.css">
+    <script type="module" src="src/main.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to the forecast</a>
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="Outfit Forecast home">
+        <span class="brand-mark" aria-hidden="true">♪</span>
+        <span>Outfit Forecast</span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <a aria-current="page" href="index.html">Forecast</a>
+        <a href="about.html">About</a>
+      </nav>
+    </header>
+
+    <main id="main-content">
+      <section class="control-panel" aria-labelledby="location-heading">
+        <div>
+          <p class="eyebrow">Plan your campus day</p>
+          <h1 id="location-heading">What should I wear?</h1>
+        </div>
+        <form class="location-form" id="location-form" novalidate>
+          <label for="location-query">US city or ZIP code</label>
+          <div class="field-row">
+            <input id="location-query" name="location" autocomplete="postal-code" placeholder="Austin, TX or 78701" aria-describedby="location-message" aria-controls="location-results">
+            <button class="button button-primary" type="submit">Search</button>
+          </div>
+          <p class="field-message" id="location-message">Choose a place to update the seven-day outlook.</p>
+          <div class="location-results" id="location-results" hidden>
+            <p><strong>Select a location</strong></p>
+            <div id="location-result-list" role="group" aria-label="Matching US locations"></div>
+          </div>
+          <button class="button button-secondary retry-button" id="retry-weather" type="button" hidden>Retry weather</button>
+        </form>
+        <button class="button button-secondary location-button" id="use-location" type="button">
+          <span aria-hidden="true">◎</span> Use my location
+        </button>
+      </section>
+
+      <section class="date-section" aria-labelledby="date-heading">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Seven-day outlook</p>
+            <h2 id="date-heading">Choose a date</h2>
+          </div>
+          <p id="selected-date-label">Today</p>
+        </div>
+        <div class="date-strip" id="date-strip" role="group" aria-label="Forecast dates"></div>
+      </section>
+
+      <div class="forecast-layout">
+        <section class="character-panel" aria-labelledby="outfit-heading">
+          <div class="character-frame">
+            <img id="character-image" src="assets/characters/final/character-mild-b.png" alt="Character wearing a cropped camel trench, navy top, and cream trousers">
+            <div class="wearable-layers" id="wearable-layers" aria-hidden="true"></div>
+          </div>
+          <div class="character-copy">
+            <p class="eyebrow">Today’s look</p>
+            <h2 id="outfit-heading">Polished layers for a full day</h2>
+            <p id="outfit-summary">A light jacket and tailored trousers handle a mild morning without feeling heavy later.</p>
+          </div>
+        </section>
+
+        <div class="forecast-details">
+          <section class="weather-card" aria-labelledby="weather-heading">
+            <div class="weather-place">
+              <p class="status-pill" id="forecast-status">Current</p>
+              <h2 id="weather-heading"><span id="place-name">Austin, TX</span></h2>
+              <p id="weather-date">Thursday, October 1</p>
+            </div>
+            <img id="weather-icon" src="assets/icons/weather/final/partly-cloudy.svg" alt="Partly cloudy">
+            <div class="temperature-block">
+              <p class="temperature"><span id="temperature">64</span><span aria-hidden="true">°</span><span class="sr-only"> degrees Fahrenheit</span></p>
+              <p><span id="condition">Partly cloudy</span> · Feels like <span id="feels-like">63°F</span></p>
+            </div>
+            <dl class="weather-facts">
+              <div><dt>High / low</dt><dd id="high-low">72° / 55°</dd></div>
+              <div><dt>Rain</dt><dd id="precipitation">20%</dd></div>
+              <div><dt>Updated</dt><dd id="updated-time">8:10 AM</dd></div>
+            </dl>
+          </section>
+
+          <section class="recommendation-card" aria-labelledby="recommendation-heading">
+            <p class="eyebrow">Your recommendation</p>
+            <h2 id="recommendation-heading">Easy layers, refined finish</h2>
+            <p id="recommendation-copy">Start with the jacket for the cool morning. The breathable base layer will still feel comfortable as the afternoon warms.</p>
+            <div class="action-row">
+              <button class="button button-celebrate" id="affirmation" type="button">i feel so stunning today</button>
+              <button class="button button-secondary" id="fashion-show" type="button">Fashion show</button>
+            </div>
+            <p class="affirmation-feedback" id="affirmation-feedback" hidden>Stunning confirmed <span aria-hidden="true">✦</span></p>
+          </section>
+
+          <div class="detail-grid">
+            <section class="reminder-card" aria-labelledby="reminder-heading">
+              <h2 id="reminder-heading">Remember</h2>
+              <ul class="reminder-list" id="reminder-list">
+                <li><img src="assets/icons/reminders/final/wind-layer.svg" alt=""><span>Keep the light layer nearby for morning gusts.</span></li>
+              </ul>
+            </section>
+            <section class="changes-card" aria-labelledby="changes-heading">
+              <h2 id="changes-heading">Changes later</h2>
+              <p id="changes-copy">The afternoon feels about 13°F warmer than the morning, so choose a layer you can remove.</p>
+            </section>
+          </div>
+        </div>
+      </div>
+
+      <section class="week-overview" aria-labelledby="week-heading">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">At a glance</p>
+            <h2 id="week-heading">This week</h2>
+          </div>
+        </div>
+        <div class="week-grid" id="week-grid"></div>
+      </section>
+    </main>
+
+    <footer>
+      <p>Weather data by <a href="https://open-meteo.com/" rel="external">Open-Meteo</a>. Forecasts are model-based and can change.</p>
+    </footer>
+    <div class="sr-only" id="app-status" role="status" aria-live="polite"></div>
+  </body>
+</html>
