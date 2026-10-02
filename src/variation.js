@@ -47,10 +47,12 @@ export function selectChangesLaterWording(id, evidence, placeId, date) {
   return { index, text: choices[index](evidence) };
 }
 
-export function accessoryPathsFor(reminderIds, placeId, date) {
+export function accessoryPathsFor(reminderIds, category, dailyUvMax) {
   const ids = new Set(reminderIds);
   const paths = [];
-  if (ids.has("sun-protection")) paths.push("sun-visor.png");
+  if (ids.has("sun-protection") && category === "hot" && Number.isFinite(dailyUvMax) && dailyUvMax > 3) {
+    paths.push("sun-visor.png");
+  }
   if (ids.has("umbrella")) paths.push("umbrella.png");
   if (ids.has("wind-layer")) paths.push("cold-wind-scarf.png");
   return paths;

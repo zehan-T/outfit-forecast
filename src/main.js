@@ -170,7 +170,7 @@ function renderAccessories(day) {
     return;
   }
   const reminderIds = day.recommendation.reminders.map(({ id }) => id);
-  const paths = accessoryPathsFor(reminderIds, activePlace.id, day.date);
+  const paths = accessoryPathsFor(reminderIds, day.category, day.record.dailyUvMax);
   ui.wearableLayers.replaceChildren(...paths.map((filename) => {
     const image = document.createElement("img");
     image.src = `assets/accessories/final/${filename}`;

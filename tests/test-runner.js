@@ -372,13 +372,13 @@ addTest("geolocation is requested only when invoked and maps success, denial, an
 });
 
 addTest("weather accessories follow reminder triggers and use the approved sun visor", () => {
-  const first = accessoryPathsFor(["sun-protection", "umbrella", "wind-layer"], "austin", "2026-10-01");
-  const returned = accessoryPathsFor(["sun-protection", "umbrella", "wind-layer"], "austin", "2026-10-01");
+  const first = accessoryPathsFor(["sun-protection", "umbrella", "wind-layer"], "hot", 4);
+  const returned = accessoryPathsFor(["sun-protection", "umbrella", "wind-layer"], "hot", 4);
   assert(first.join(",") === returned.join(","), "sun accessory changed for the same location and date");
   assert(first.includes("sun-visor.png") && !first.includes("sunglasses.png"), "approved sun visor selection is incorrect");
   assert(first.includes("umbrella.png") && first.includes("cold-wind-scarf.png"), "weather accessory missing");
   assert(!first.some((path) => path.includes("glove")), "cancelled gloves are still selected");
-  assert(accessoryPathsFor([], "austin", "2026-10-01").length === 0, "accessory appeared without a trigger");
+  assert(accessoryPathsFor([], "hot", 4).length === 0, "accessory appeared without a trigger");
 });
 
 addTest("phone forecast markup includes layered accessories and visible affirmation feedback", async () => {
@@ -552,14 +552,17 @@ addTest("loading preserves focus and the affirmation stores no response", async 
   } finally { frame.remove(); }
 });
 
-addTest("sun protection and the sun visor require UV Index 3 or higher", () => {
+addTest("sun protection starts at UV 3 but the sun visor requires Hot and UV above 3", () => {
   const base = { campusWmoCodes: [0], campusPrecipitationPercentages: [0], campusApparentF: [65], campusGustMph: [5] };
   const belowThreshold = reminderRules({ ...base, dailyUvMax: 2 }, "mild");
   const atThreshold = reminderRules({ ...base, dailyUvMax: 3 }, "mild");
+  const aboveThreshold = reminderRules({ ...base, dailyUvMax: 4 }, "hot");
   assert(!belowThreshold.some(({ id }) => id === "sun-protection"), "UV Index 2 should not trigger sun protection");
   assert(atThreshold.some(({ id }) => id === "sun-protection"), "UV Index 3 should trigger sun protection");
-  assert(accessoryPathsFor(belowThreshold.map(({ id }) => id), "austin", "2026-10-01").length === 0, "a sun accessory appeared below the threshold");
-  assert(accessoryPathsFor(atThreshold.map(({ id }) => id), "austin", "2026-10-01").includes("sun-visor.png"), "UV Index 3 did not produce the sun visor");
+  assert(accessoryPathsFor(belowThreshold.map(({ id }) => id), "hot", 2).length === 0, "a sun accessory appeared below the threshold");
+  assert(!accessoryPathsFor(atThreshold.map(({ id }) => id), "hot", 3).includes("sun-visor.png"), "UV Index 3 should not produce the sun visor");
+  assert(!accessoryPathsFor(aboveThreshold.map(({ id }) => id), "warm", 4).includes("sun-visor.png"), "a non-Hot category produced the sun visor");
+  assert(accessoryPathsFor(aboveThreshold.map(({ id }) => id), "hot", 4).includes("sun-visor.png"), "Hot with UV Index 4 did not produce the sun visor");
 });
 
 addTest("reviewed forecast removes the week overview and scales wearable accessories", async () => {

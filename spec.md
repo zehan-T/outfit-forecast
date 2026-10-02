@@ -47,7 +47,7 @@ The AI-generated concept images in `reference/` are visual-direction references,
 | R3 | A User can search by US city/place name or five-digit ZIP code. Results are restricted to the United States and require explicit selection when more than one match exists. Empty, invalid, and no-result searches receive plain-language inline feedback. | Search a valid city, valid ZIP, ambiguous name, empty value, and nonexistent value; confirm the correct result or message. |
 | R4 | **Use my location** requests browser geolocation only after activation. Success loads weather under the label **Current location**. Denial or unavailability explains the problem without blame and leaves manual search usable. | Mock allowed, denied, unavailable, and timed-out geolocation; confirm no prompt occurs before activation and search remains available. |
 | R5 | The date selector covers today plus the next six local calendar dates. Changing it updates the single shared recommendation state and all dependent content. | Select each date and verify date, forecast status, character, wearable accessories, icon, recommendation, reminders, and Changes later content all refer to it. |
-| R6 | The character uses one of five thermal categories—hot, warm, mild, cool, or cold—and one of three outfit variations in that category. Weather-responsive hats, sunglasses, umbrellas, and cold/wind accessories render as separate transparent layers. Identity, front-facing standing pose, scale, and transparent-canvas alignment remain consistent. | Test immediately below, at, and above every boundary; verify the category and alignment of all three category images, then trigger and remove every accessory layer without shifting the character. |
+| R6 | The character uses one of five thermal categories—hot, warm, mild, cool, or cold—and one of three outfit variations in that category. Weather-responsive sun visor, umbrella, and scarf render as separate transparent layers. Identity, front-facing standing pose, scale, and transparent-canvas alignment remain consistent. | Test immediately below, at, and above every boundary; verify the category and alignment of all three category images, then trigger and remove every accessory layer without shifting the character. |
 | R7 | The exact affirmation label is **“i feel so stunning today”**. Activation plays a short celebratory response, respects reduced motion, announces a concise confirmation, and stores no personal response. | Activate by pointer and keyboard with normal and reduced-motion settings; verify visible/announced feedback and no new personal-data storage. |
 | R8 | **Fashion show** cycles through the three outfits in the current category without an immediate repeat. The manually chosen outfit becomes that location/date/category's stable selection. | From the initial outfit, activate twice to see the other two variations and a third time to return to the first; leave, return, and reload to verify the last choice remains. |
 | R9 | Only applicable reminders appear. Thunder safety is first and direct; other reminders may cover umbrella, sun protection, hydration, wind/layers, and snow/ice footwear. Each reminder includes useful triggering evidence, such as “40% chance of rain.” | Feed fixtures that trigger each rule alone and in combination; verify inclusion, exclusion, priority, and evidence. |
@@ -125,8 +125,8 @@ Each category has exactly three complete transparent PNG character/outfit variat
 All remain campus-appropriate and preserve the approved character identity and neutral front-facing standing pose.
 
 Wearable accessories are separate aligned transparent PNG layers rather than
-baked into outfit images. At UV 3+, the sun visor may appear; precipitation at
-30%+ may show the umbrella; and a cool/cold
+baked into outfit images. The sun visor appears only for the hot category when
+the daily maximum UV Index is strictly above 3; precipitation at 30%+ may show the umbrella; and a cool/cold
 category with gusts at 25 mph+ may show the cold/wind layer. The selected
 record and the same reminder triggers control these layers. Missing optional
 data must omit its accessory rather than fabricate a condition.
@@ -204,6 +204,9 @@ The phone uses this order; laptop may arrange the same groups in two columns:
 - October 2, 2026: The Developer later retired sunglasses from the rendered
   experience. UV Index 3+ now uses only the sun visor; the sunglasses source
   file remains archived in the manifest with no active trigger.
+- October 2, 2026: The Developer limited the sun visor to the hot thermal
+  category with a daily maximum UV Index strictly above 3. UV 3 still produces
+  a general sun-protection reminder, but it does not render the visor.
 
 ## Approval
 

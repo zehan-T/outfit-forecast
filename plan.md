@@ -412,6 +412,9 @@ Record material plan changes and why they were made.
   a scarf-only warm oatmeal-beige layer. The scarf now uses the same fixed 2:3
   stage anchoring as the approved hat, and narrow/wide previews confirmed that
   it stays aligned when the viewport changes.
+- October 2, 2026: Limited the sun visor to Hot-category days with a daily
+  maximum UV Index strictly above 3. UV 3 and all non-Hot categories omit the
+  visor, while the evidence-based UV 3+ sun-protection reminder remains active.
 
 ## Saving transcripts
 

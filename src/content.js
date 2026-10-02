@@ -33,7 +33,7 @@ export const reminderWording = Object.freeze({
     ({ probability }) => `${probability}% precipitation is possible, so pack an umbrella.`
   ],
   "sun-protection": [
-    ({ uv }) => `UV Index ${uv}: add sunglasses or a hat and use sun protection.`,
+    ({ uv }) => `UV Index ${uv}: use sunscreen and protect exposed skin.`,
     ({ uv }) => `Plan for sun protection today; the UV Index reaches ${uv}.`,
     ({ uv }) => `With UV at ${uv}, bring shade for your face and protect exposed skin.`
   ],

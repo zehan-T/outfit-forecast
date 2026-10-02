@@ -12,8 +12,9 @@ Release verification for Outfit Forecast. Last updated October
   returned HTTP 200; the deployed browser suite passed 46/46, all outlook cards
   showed explicit calendar dates, and the public forecast rendered live Austin
   Open-Meteo data.
-- Review regression tests 42â€“44 cover the UV Index 3 threshold, removed weekly
-  overview, proportional accessory scaling, and location-action alignment.
+- Review regression tests 42â€“44 cover the distinct sun-protection/visor
+  thresholds, removed weekly overview, proportional accessory scaling, and
+  location-action alignment. The visor requires Hot and UV above 3.
 - Browser test 45 verifies the shared 2:3 character/accessory stage at 320,
   767, 1024, and 1440 CSS px; browser test 32 verifies the approved narrow-screen
   content order.
