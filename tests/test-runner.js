@@ -601,6 +601,17 @@ addTest("character and accessories share one fixed-ratio stage at responsive wid
   }
 });
 
+addTest("every seven-day outlook card includes an explicit calendar date", async () => {
+  const frame = await loadForecastFrame(320);
+  try {
+    const document = frame.contentDocument;
+    const buttons = [...document.querySelectorAll(".date-button")];
+    const dates = buttons.map((button) => button.querySelector(".date-calendar")?.textContent.trim());
+    assert(buttons.length === 7 && dates.every(Boolean), "one or more outlook cards is missing its calendar date");
+    assert(dates[0] === "Oct 1" && dates[6] === "Oct 7", "outlook calendar dates do not match the fixture");
+  } finally { frame.remove(); }
+});
+
 async function run() {
   const results = document.querySelector("#results");
   let failures = 0;

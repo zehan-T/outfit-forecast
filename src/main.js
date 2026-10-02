@@ -56,8 +56,18 @@ const dateFormatter = new Intl.DateTimeFormat("en-US", {
   timeZone: "UTC"
 });
 
+const shortDateFormatter = new Intl.DateTimeFormat("en-US", {
+  month: "short",
+  day: "numeric",
+  timeZone: "UTC"
+});
+
 function formatDate(isoDate) {
   return dateFormatter.format(new Date(`${isoDate}T12:00:00Z`));
+}
+
+function formatShortDate(isoDate) {
+  return shortDateFormatter.format(new Date(`${isoDate}T12:00:00Z`));
 }
 
 function iconPath(icon) {
@@ -177,7 +187,7 @@ function renderDateStrip(selectedIndex) {
     button.type = "button";
     button.setAttribute("aria-pressed", String(index === selectedIndex));
     button.dataset.dayIndex = String(index);
-    button.innerHTML = `<strong>${day.shortLabel}</strong><span>${day.highF}° / ${day.lowF}°</span><span>${day.condition}</span>`;
+    button.innerHTML = `<strong>${day.shortLabel}</strong><span class="date-calendar">${formatShortDate(day.date)}</span><span>${day.highF}° / ${day.lowF}°</span><span>${day.condition}</span>`;
     return button;
   }));
 }

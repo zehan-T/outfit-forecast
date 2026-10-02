@@ -73,6 +73,9 @@ outfit, seven-day outlook, recommendation, Remember, then Changes later. The
 character and active accessories share one fixed 2:3 stage so they scale and
 move together at every responsive width.
 
+Current approved R5 date-card detail: every seven-day outlook card shows both
+its relative/day label and an explicit abbreviated month/day calendar date.
+
 ## Recommendation state and data flow
 
 ### Provider requests

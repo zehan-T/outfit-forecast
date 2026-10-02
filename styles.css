@@ -241,7 +241,7 @@ input::placeholder { color: #727988; }
 }
 
 .date-button {
-  min-height: 5.3rem;
+  min-height: 6.4rem;
   padding: 0.65rem;
   display: grid;
   justify-items: start;
@@ -256,6 +256,7 @@ input::placeholder { color: #727988; }
 
 .date-button strong { font-size: 0.95rem; }
 .date-button span { color: var(--ink-soft); font-size: 0.82rem; }
+.date-button .date-calendar { color: var(--gold-dark); font-weight: 800; }
 .date-button[aria-pressed="true"] { border-color: var(--ink); background: var(--ink); color: white; }
 .date-button[aria-pressed="true"] span { color: #f5eee2; }
 

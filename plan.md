@@ -397,6 +397,9 @@ Record material plan changes and why they were made.
   reminder, facilitator checklist, consistent tasks/prompts, anonymous P1-P3
   note fields, and findings/improvement template. Sessions remain unrecorded
   until three peers complete them.
+- October 2, 2026: Added an explicit abbreviated month/day date to every
+  seven-day outlook card while retaining Today, Tomorrow, and weekday labels.
+  Phone overflow/order checks and the expanded 46/46 browser suite passed.
 
 ## Saving transcripts
 

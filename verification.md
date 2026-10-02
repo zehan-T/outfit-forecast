@@ -5,17 +5,20 @@ Release verification for Outfit Forecast. Last updated October
 
 ## Current result
 
-- Browser-native automated suite: **45/45 passed**.
+- Browser-native automated suite: **46/46 passed**.
 - Public GitHub Pages prototype: **HTTPS enabled and build successful** at
   `https://zehan-t.github.io/outfit-forecast/`.
 - Public-route checks: homepage, About, CSS, JavaScript, and asset manifest all
-  returned HTTP 200; the deployed browser suite passed 45/45 and the public
-  forecast rendered live Austin Open-Meteo data.
+  returned HTTP 200; the deployed browser suite passed 45/45 before the latest
+  date-card revision, which passed 46/46 locally and is queued for redeployment;
+  the public forecast rendered live Austin Open-Meteo data.
 - Review regression tests 42â€“44 cover the UV Index 3 threshold, removed weekly
   overview, proportional accessory scaling, and location-action alignment.
 - Browser test 45 verifies the shared 2:3 character/accessory stage at 320,
   767, 1024, and 1440 CSS px; browser test 32 verifies the approved narrow-screen
   content order.
+- Browser test 46 verifies that all seven outlook cards include explicit
+  calendar dates matching their forecast records.
 - Production manifest: **36 declared, 36 unique, 0 missing**.
 - Credential-pattern scan: **no matches** outside excluded artwork/test output.
 - Live Open-Meteo smoke checks: complete seven-day forecasts returned for
