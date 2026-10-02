@@ -1,11 +1,16 @@
 # Verification Record
 
-Local release-candidate verification for Outfit Forecast. Last updated October
+Release verification for Outfit Forecast. Last updated October
 2, 2026.
 
 ## Current result
 
 - Browser-native automated suite: **45/45 passed**.
+- Public GitHub Pages prototype: **HTTPS enabled and build successful** at
+  `https://zehan-t.github.io/outfit-forecast/`.
+- Public-route checks: homepage, About, CSS, JavaScript, and asset manifest all
+  returned HTTP 200; the deployed browser suite passed 45/45 and the public
+  forecast rendered live Austin Open-Meteo data.
 - Review regression tests 42â€“44 cover the UV Index 3 threshold, removed weekly
   overview, proportional accessory scaling, and location-action alignment.
 - Browser test 45 verifies the shared 2:3 character/accessory stage at 320,
@@ -43,14 +48,11 @@ Local release-candidate verification for Outfit Forecast. Last updated October
 | R17 WCAG-oriented semantics and interaction | Browser tests 31–35, 37–41 | Pass; real assistive-technology check remains |
 | R18 limited local storage and clearing | Browser tests 19–23, 41 | Pass |
 | R19 Open-Meteo request contract/no secret | Browser tests 25, 27; live two-place check; secret scan | Pass |
-| R20 public HTTPS deployment | Checkpoint 11 | Pending |
+| R20 public HTTPS deployment | GitHub Pages build `d784d50`; public route and browser checks | Pass |
 | R21 three-peer usability study and revision | Usability phase | Pending |
 
 ## Known remaining work
 
-- GitHub Pages activation is blocked while the repository remains private on
-  the current GitHub plan; the prepared `gh-pages` branch is not yet served.
-- Developer visual review and requested refinements.
+- Real-phone and independent laptop review of the deployed URL.
 - Three anonymized peer usability sessions and one evidence-supported revision.
-- Public GitHub Pages deployment and independent phone/laptop verification.
 - Real-device screen-reader smoke check.

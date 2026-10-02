@@ -112,8 +112,8 @@ and viewport/keyboard/accessibility checks at every UI checkpoint.
 - [x] Use the approved screen drawings to guide layout and interaction work
 - [x] Keep one recommendation state driving every visual and written output
 - [x] Test and fix each checkpoint against the specification before starting the next
-- [ ] Commit each meaningful working checkpoint using only Project 3 files
-- [ ] **Checkpoint 11 — public prototype:** deploy the release candidate to
+- [x] Commit each meaningful working checkpoint using only Project 3 files
+- [x] **Checkpoint 11 — public prototype:** deploy the release candidate to
   GitHub Pages with HTTPS, then test direct loads, refreshes, provider requests,
   and both screens independently of the local version (R20)
 
@@ -342,6 +342,11 @@ Record material plan changes and why they were made.
   Pages activation because the current plan does not support Pages for this
   private repository. The repository visibility was not changed; Checkpoint 11
   remains open pending the Developer's hosting/visibility decision.
+- October 2, 2026: With Developer approval, created the public repository
+  `zehan-T/outfit-forecast`, deployed Project 3 from its isolated subtree to
+  GitHub Pages with enforced HTTPS, and verified direct homepage/About/assets
+  loads, live Open-Meteo rendering, phone layout, and the public 45/45 browser
+  suite. Checkpoint 11 and R20 are complete; real-device verification remains.
 
 ## Saving transcripts
 
