@@ -393,9 +393,17 @@ addTest("phone and intermediate widths reflow without horizontal page overflow",
     try {
       const document = frame.contentDocument;
       assert(!hasPageOverflow(document), `${width}px layout has horizontal page overflow: ${overflowDiagnostic(document)}`);
+      const controls = document.querySelector(".control-panel").getBoundingClientRect();
+      const weather = document.querySelector(".weather-card").getBoundingClientRect();
       const character = document.querySelector(".character-panel").getBoundingClientRect();
-      const details = document.querySelector(".forecast-details").getBoundingClientRect();
-      assert(details.top >= character.bottom, `${width}px layout should keep character before details`);
+      const dates = document.querySelector(".date-section").getBoundingClientRect();
+      const recommendation = document.querySelector(".recommendation-card").getBoundingClientRect();
+      const reminders = document.querySelector(".detail-grid").getBoundingClientRect();
+      assert(weather.top >= controls.bottom, `${width}px layout should keep current weather after search`);
+      assert(character.top >= weather.bottom, `${width}px layout should keep the outfit after current weather`);
+      assert(dates.top >= character.bottom, `${width}px layout should keep the seven-day outlook after the outfit`);
+      assert(recommendation.top >= dates.bottom, `${width}px layout should keep the recommendation after the outlook`);
+      assert(reminders.top >= recommendation.bottom, `${width}px layout should keep reminders after the recommendation`);
     } finally { frame.remove(); }
   }
 });
@@ -419,8 +427,8 @@ addTest("laptop widths use aligned two-column compositions without overflow", as
       const document = frame.contentDocument;
       assert(!hasPageOverflow(document), `${width}px layout has horizontal page overflow`);
       const character = document.querySelector(".character-panel").getBoundingClientRect();
-      const details = document.querySelector(".forecast-details").getBoundingClientRect();
-      assert(details.left > character.left && Math.abs(details.top - character.top) < 2, `${width}px layout is not an aligned two-column composition`);
+      const weather = document.querySelector(".weather-card").getBoundingClientRect();
+      assert(weather.left > character.left && Math.abs(weather.top - character.top) < 2, `${width}px layout is not an aligned two-column composition`);
     } finally { frame.remove(); }
   }
 });
@@ -576,6 +584,19 @@ addTest("Search and Use my location align on laptops and stack evenly on phones"
       } else {
         assert(location.top >= search.bottom && Math.abs(search.width - location.width) < 2, "phone location actions do not stack at equal width");
       }
+    } finally { frame.remove(); }
+  }
+});
+
+addTest("character and accessories share one fixed-ratio stage at responsive widths", async () => {
+  for (const width of [320, 767, 1024, 1440]) {
+    const frame = await loadForecastFrame(width);
+    try {
+      const document = frame.contentDocument;
+      const stage = document.querySelector(".character-stage").getBoundingClientRect();
+      const character = document.querySelector("#character-image").getBoundingClientRect();
+      assert(Math.abs(stage.width / stage.height - 2 / 3) < 0.01, `${width}px character stage lost its 2:3 ratio`);
+      assert(Math.abs(stage.width - character.width) < 2 && Math.abs(stage.height - character.height) < 2, `${width}px character does not fill the shared stage`);
     } finally { frame.remove(); }
   }
 });

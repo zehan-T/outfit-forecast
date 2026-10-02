@@ -68,6 +68,11 @@ Current approved R6 override: active weather-responsive wearables are the sun
 visor, umbrella, and cold/wind layer. Sunglasses are retired and must never
 render; their source PNG is retained only as an archived asset.
 
+Current approved R11 narrow-screen order: location search, current weather,
+outfit, seven-day outlook, recommendation, Remember, then Changes later. The
+character and active accessories share one fixed 2:3 stage so they scale and
+move together at every responsive width.
+
 ## Recommendation state and data flow
 
 ### Provider requests

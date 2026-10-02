@@ -332,6 +332,11 @@ Record material plan changes and why they were made.
 - October 2, 2026: The Developer cancelled sunglasses. Removed them from the
   accessory selection and styling, retired their retained source asset in the
   manifest, and made the sun visor the only UV Index 3+ wearable layer.
+- October 2, 2026: Fixed responsive accessory drift by placing the character and
+  wearable layers on one shared 2:3 stage. Reordered the narrow-screen layout to
+  location search, current weather, outfit, seven-day outlook, recommendation,
+  Remember, and Changes later while preserving the laptop composition. The
+  expanded browser-native suite passed 45/45 tests.
 
 ## Saving transcripts
 
