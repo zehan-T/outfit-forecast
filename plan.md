@@ -315,6 +315,10 @@ Record material plan changes and why they were made.
   information hierarchy. Repeat verification passed 44/44 browser-native tests,
   including explicit checks for the UV threshold, accessory scale, removed week
   overview, and desktop/phone location-control alignment.
+- October 2, 2026: Follow-up visual review moved the umbrella beside the
+  character, centered and slightly reduced the sunglasses over the eyes, and
+  added a separate head anchor and scale for the sun visor. The browser-native
+  regression suite remained at 44/44 passing tests.
 
 ## Saving transcripts
 

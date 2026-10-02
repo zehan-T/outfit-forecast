@@ -282,8 +282,18 @@ input::placeholder { color: #727988; }
 .character-frame img { width: min(100%, 28rem); height: 100%; object-fit: contain; object-position: center bottom; }
 .wearable-layers { position: absolute; inset: 0; pointer-events: none; }
 .wearable-layers img { position: absolute; inset: 0; }
-.wearable-layers .accessory-sunglasses { transform: scale(0.5); transform-origin: 50% 27%; }
-.wearable-layers .accessory-umbrella { transform: scale(0.72); transform-origin: 67% 56%; }
+.wearable-layers .accessory-sunglasses {
+  transform: translate(6.5%, -4.25%) scale(0.44);
+  transform-origin: 50% 27%;
+}
+.wearable-layers .accessory-sun-visor {
+  transform: translateY(-5%) scale(0.46);
+  transform-origin: 50% 22%;
+}
+.wearable-layers .accessory-umbrella {
+  transform: translateX(12%) scale(0.72);
+  transform-origin: 67% 56%;
+}
 .character-copy { padding: 1.4rem 0.5rem 0.4rem; }
 .character-copy h2 { margin-bottom: 0.65rem; }
 .character-copy p:last-child { margin-bottom: 0; color: var(--ink-soft); }
