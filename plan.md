@@ -197,12 +197,12 @@ the session. Keep interpretation out of the observation fields.
 
 #### P2
 
-- Date and device/viewport: `[record]`
-- Task 1 actions/comments/success/barriers: `[record]`
-- Task 2 actions/comments/success/barriers: `[record]`
-- Task 3 actions/comments/success/barriers: `[record]`
-- Task 4 actions/comments/success/barriers: `[record]`
-- Session-level questions or possible changes: `[record]`
+- Date and device/viewport: `October 2, 2026; Apple laptop; exact viewport not recorded.`
+- Task 1 actions/comments/success/barriers: `Used an Austin place search, reached the recommendation “Tailored, light, and ready to move,” and reported no barrier.`
+- Task 2 actions/comments/success/barriers: `Selected October 8 and identified both applicable Remember items: “Plan for sun protection today; the UV Index reaches 4.55.” and “32 mph gusts favor a close-fitting jacket or scarf.” This shows successful interpretation of what to carry or add for the later date; no barrier was reported.`
+- Task 3 actions/comments/success/barriers: `Used Fashion show to change clothes successfully, left the date, returned, and reported that the clothing remained unchanged. No persistence barrier was reported.`
+- Task 4 actions/comments/success/barriers: `Identified Open-Meteo as the weather-data source and Zehan as the creator, then found How recommendations work, Guidance sources, Art credits, and Privacy. The participant's explanation of what the app saves was not recorded and requires one follow-up.`
+- Session-level questions or possible changes: `No barrier or requested change was recorded. Record the participant's understanding of saved data before marking P2 recorded.`
 
 #### P3
 
