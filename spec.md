@@ -64,6 +64,10 @@ The AI-generated concept images in `reference/` are visual-direction references,
 | R20 | Deploy at a public HTTPS URL that works after direct loading and refresh. | Open both screens on phone and laptop browsers, refresh, and complete location/date/recommendation flows without routing or mixed-content errors. |
 | R21 | Three peers test the working version. Record tasks, observations, findings, and at least one implemented evidence-supported change in `plan.md` and Revisions. | Confirm three anonymized records, one tied implementation change, and repeat verification of the affected acceptance check. |
 
+Current approved R6 override: active weather-responsive wearables are the sun
+visor, umbrella, and cold/wind layer. Sunglasses are retired and must never
+render; their source PNG is retained only as an archived asset.
+
 ## Recommendation state and data flow
 
 ### Provider requests
@@ -113,8 +117,8 @@ Each category has exactly three complete transparent PNG character/outfit variat
 All remain campus-appropriate and preserve the approved character identity and neutral front-facing standing pose.
 
 Wearable accessories are separate aligned transparent PNG layers rather than
-baked into outfit images. At UV 3+, deterministic selection may show the sun
-hat or sunglasses; precipitation at 30%+ may show the umbrella; and a cool/cold
+baked into outfit images. At UV 3+, the sun visor may appear; precipitation at
+30%+ may show the umbrella; and a cool/cold
 category with gusts at 25 mph+ may show the cold/wind layer. The selected
 record and the same reminder triggers control these layers. Missing optional
 data must omit its accessory rather than fabricate a condition.
@@ -136,7 +140,7 @@ The expected production set is 36 visual assets. Reference screenshots and hand 
 | ---: | --- | --- | --- |
 | 1 | Character master | Identity/alignment reference and optional About art; transparent PNG | AI-assisted artwork generated with OpenAI; creatively directed, selected, and edited by Zehan. |
 | 15 | Outfit characters | Three full-character transparent PNGs for each of five categories | AI-assisted artwork generated with OpenAI; creatively directed, selected, and edited by Zehan. |
-| 4 | Wearable accessory layers | Aligned transparent PNG sun hat, sunglasses, umbrella, and cold/wind accessories | AI-assisted artwork generated with OpenAI; creatively directed, selected, and edited by Zehan. |
+| 4 | Wearable accessory files | Active sun visor, umbrella, and cold/wind layers, plus one retained but retired sunglasses PNG | AI-assisted artwork generated with OpenAI; creatively directed, selected, and edited by Zehan. |
 | 10 | Weather icons | Clear, partly cloudy, cloudy, fog, drizzle, rain, freezing rain, snow, showers, and thunder; original inline SVG | Created for this prototype by Zehan with Agent assistance; no copied brand icon set. |
 | 6 | Reminder icons | Umbrella, sun protection, water, wind/layer, waterproof footwear/ice, and thunder safety; original inline SVG | Created for this prototype by Zehan with Agent assistance; no copied brand icon set. |
 
@@ -188,6 +192,10 @@ The phone uses this order; laptop may arrange the same groups in two columns:
   overview. R12 now ends with reminders and Changes later. The Developer also
   confirmed that sunglasses remain conditional on the existing UV Index 3+
   sun-protection rule and requested smaller sunglasses and umbrella layers.
+
+- October 2, 2026: The Developer later retired sunglasses from the rendered
+  experience. UV Index 3+ now uses only the sun visor; the sunglasses source
+  file remains archived in the manifest with no active trigger.
 
 ## Approval
 

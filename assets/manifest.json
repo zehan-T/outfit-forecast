@@ -119,8 +119,8 @@
     },
     {
       "path": "assets/accessories/final/sunglasses.png",
-      "trigger": "uv",
-      "status": "approved"
+      "trigger": "disabled",
+      "status": "retired"
     },
     {
       "path": "assets/accessories/final/umbrella.png",

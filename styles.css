@@ -271,12 +271,8 @@ input::placeholder { color: #727988; }
 .character-frame img { width: min(100%, 28rem); height: 100%; object-fit: contain; object-position: center bottom; }
 .wearable-layers { position: absolute; inset: 0; pointer-events: none; }
 .wearable-layers img { position: absolute; inset: 0; }
-.wearable-layers .accessory-sunglasses {
-  transform: translate(1.5%, -11%) rotate(-4deg) scale(0.42);
-  transform-origin: 50% 27%;
-}
 .wearable-layers .accessory-sun-visor {
-  transform: translateY(-5%) scale(0.46);
+  transform: translate(1.5%, -10%) scale(0.4);
   transform-origin: 50% 22%;
 }
 .wearable-layers .accessory-umbrella {

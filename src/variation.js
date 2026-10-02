@@ -50,10 +50,7 @@ export function selectChangesLaterWording(id, evidence, placeId, date) {
 export function accessoryPathsFor(reminderIds, placeId, date) {
   const ids = new Set(reminderIds);
   const paths = [];
-  if (ids.has("sun-protection")) {
-    const sunOptions = ["sun-visor.png", "sunglasses.png"];
-    paths.push(sunOptions[stableIndex(sunOptions.length, placeId, date, "accessory:sun")]);
-  }
+  if (ids.has("sun-protection")) paths.push("sun-visor.png");
   if (ids.has("umbrella")) paths.push("umbrella.png");
   if (ids.has("wind-layer")) paths.push("cold-wind-scarf-gloves.png");
   return paths;

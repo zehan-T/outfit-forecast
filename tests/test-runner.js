@@ -142,6 +142,8 @@ addTest("production asset manifest declares 36 complete assets", async () => {
   const declared = 1 + manifest.outfits.length + manifest.wearableAccessories.length + manifest.weatherIcons.length + manifest.reminderIcons.length;
   assert(manifest.expectedAssetCount === 36, "expected count should be 36");
   assert(declared === manifest.expectedAssetCount, `manifest declares ${declared} assets`);
+  const sunglasses = manifest.wearableAccessories.find(({ path }) => path.endsWith("sunglasses.png"));
+  assert(sunglasses?.status === "retired" && sunglasses.trigger === "disabled", "sunglasses should remain retired");
 });
 
 addTest("thermal categories honor every exact boundary", () => {
@@ -369,11 +371,11 @@ addTest("geolocation is requested only when invoked and maps success, denial, an
   assert(absent?.code === "location-unavailable" && absent.message.includes("Search"), "missing geolocation guidance is unclear");
 });
 
-addTest("weather accessories follow reminder triggers and keep sun selection stable", () => {
+addTest("weather accessories follow reminder triggers and use the approved sun visor", () => {
   const first = accessoryPathsFor(["sun-protection", "umbrella", "wind-layer"], "austin", "2026-10-01");
   const returned = accessoryPathsFor(["sun-protection", "umbrella", "wind-layer"], "austin", "2026-10-01");
   assert(first.join(",") === returned.join(","), "sun accessory changed for the same location and date");
-  assert(first.some((path) => ["sun-visor.png", "sunglasses.png"].includes(path)), "sun accessory missing");
+  assert(first.includes("sun-visor.png") && !first.includes("sunglasses.png"), "approved sun visor selection is incorrect");
   assert(first.includes("umbrella.png") && first.includes("cold-wind-scarf-gloves.png"), "weather accessory missing");
   assert(accessoryPathsFor([], "austin", "2026-10-01").length === 0, "accessory appeared without a trigger");
 });
@@ -541,14 +543,14 @@ addTest("loading preserves focus and the affirmation stores no response", async 
   } finally { frame.remove(); }
 });
 
-addTest("sun protection and sunglasses require UV Index 3 or higher", () => {
+addTest("sun protection and the sun visor require UV Index 3 or higher", () => {
   const base = { campusWmoCodes: [0], campusPrecipitationPercentages: [0], campusApparentF: [65], campusGustMph: [5] };
   const belowThreshold = reminderRules({ ...base, dailyUvMax: 2 }, "mild");
   const atThreshold = reminderRules({ ...base, dailyUvMax: 3 }, "mild");
   assert(!belowThreshold.some(({ id }) => id === "sun-protection"), "UV Index 2 should not trigger sun protection");
   assert(atThreshold.some(({ id }) => id === "sun-protection"), "UV Index 3 should trigger sun protection");
   assert(accessoryPathsFor(belowThreshold.map(({ id }) => id), "austin", "2026-10-01").length === 0, "a sun accessory appeared below the threshold");
-  assert(accessoryPathsFor(atThreshold.map(({ id }) => id), "austin", "2026-10-01").some((path) => ["sun-visor.png", "sunglasses.png"].includes(path)), "UV Index 3 did not produce a sun accessory");
+  assert(accessoryPathsFor(atThreshold.map(({ id }) => id), "austin", "2026-10-01").includes("sun-visor.png"), "UV Index 3 did not produce the sun visor");
 });
 
 addTest("reviewed forecast removes the week overview and scales wearable accessories", async () => {
@@ -557,8 +559,8 @@ addTest("reviewed forecast removes the week overview and scales wearable accesso
   const stylesheet = await (await fetch("../styles.css")).text();
   assert(!document.querySelector(".week-overview") && !text.includes("At a glance") && !text.includes("This week"), "removed week overview is still present");
   assert(!stylesheet.includes(".character-frame::after"), "removed decorative character ring is still present");
-  assert(stylesheet.includes(".accessory-sunglasses") && stylesheet.includes("scale(0.42)"), "sunglasses scale adjustment is missing");
-  assert(stylesheet.includes(".accessory-sun-visor") && stylesheet.includes("scale(0.46)"), "sun visor alignment adjustment is missing");
+  assert(!stylesheet.includes(".accessory-sunglasses"), "cancelled sunglasses styling is still present");
+  assert(stylesheet.includes(".accessory-sun-visor") && stylesheet.includes("scale(0.4)"), "sun visor alignment adjustment is missing");
   assert(stylesheet.includes(".accessory-umbrella") && stylesheet.includes("scale(0.54)"), "umbrella scale adjustment is missing");
 });
 
