@@ -570,6 +570,7 @@ addTest("reviewed forecast removes the week overview and scales wearable accesso
   assert(!stylesheet.includes(".accessory-sunglasses"), "cancelled sunglasses styling is still present");
   assert(stylesheet.includes(".accessory-sun-visor") && stylesheet.includes("scale(0.4)"), "sun visor alignment adjustment is missing");
   assert(stylesheet.includes(".accessory-umbrella") && stylesheet.includes("scale(0.54)"), "umbrella scale adjustment is missing");
+  assert(stylesheet.includes(".accessory-cold-wind-scarf-gloves") && stylesheet.includes("scale(0.42)"), "scarf and gloves scale adjustment is missing");
 });
 
 addTest("Search and Use my location align on laptops and stack evenly on phones", async () => {

@@ -19,6 +19,9 @@ Release verification for Outfit Forecast. Last updated October
   content order.
 - Browser test 46 verifies that all seven outlook cards include explicit
   calendar dates matching their forecast records.
+- Cold-weather accessory review: the scarf/gloves layer passed a dedicated
+  visual check at 42% scale with a 6% downward adjustment, clearing the face
+  while retaining neck and hand alignment.
 - Production manifest: **36 declared, 36 unique, 0 missing**.
 - Credential-pattern scan: **no matches** outside excluded artwork/test output.
 - Live Open-Meteo smoke checks: complete seven-day forecasts returned for

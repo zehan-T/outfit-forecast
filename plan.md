@@ -400,6 +400,10 @@ Record material plan changes and why they were made.
 - October 2, 2026: Added an explicit abbreviated month/day date to every
   seven-day outlook card while retaining Today, Tomorrow, and weekday labels.
   Phone overflow/order checks and the expanded 46/46 browser suite passed.
+- October 2, 2026: Reduced the cold-weather scarf/gloves wearable layer to 42%
+  scale and moved it 6% downward on the shared character stage. A dedicated
+  cold-outfit preview confirmed that the scarf clears the face and the gloves
+  remain aligned with the hands; the 46/46 browser suite passed again.
 
 ## Saving transcripts
 
