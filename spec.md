@@ -53,7 +53,7 @@ The AI-generated concept images in `reference/` are visual-direction references,
 | R9 | Only applicable reminders appear. Thunder safety is first and direct; other reminders may cover umbrella, sun protection, hydration, wind/layers, and snow/ice footwear. Each reminder includes useful triggering evidence, such as “40% chance of rain.” | Feed fixtures that trigger each rule alone and in combination; verify inclusion, exclusion, priority, and evidence. |
 | R10 | **Changes later** appears when the campus-day apparent-temperature range is at least 12°F or precipitation begins after morning. It states what changes rather than giving a generic warning. | Test no change, exactly 12°F, 11°F, and precipitation beginning after morning; verify boundary behavior and copy. |
 | R11 | Phone layout (up to 767 CSS px) is one column: compact header/location controls, horizontal seven-date selector, character and main recommendation before evidence, then reminders and attribution. No essential action requires hover or swipe. | At 320, 375, and 767 CSS px, verify no horizontal page scroll or clipping, frequent controls of at least 44 × 44 CSS px, and full tap/keyboard operation. |
-| R12 | Laptop layout (1024 CSS px and above) uses a true two-column composition: top navigation/location/date; character at left; larger weather summary, recommendation, affirmation, Fashion show, reminders, and seven-day overview at right. Primary columns align and do not overlap. | At 1024, 1365, and 1440 CSS px, verify two columns, enlarged weather summary, aligned heights, no overlap, and no narrow phone clone. |
+| R12 | Laptop layout (1024 CSS px and above) uses a true two-column composition: top navigation/location/date; character at left; larger weather summary, recommendation, affirmation, Fashion show, reminders, and Changes later at right. Primary columns align and do not overlap. | At 1024, 1365, and 1440 CSS px, verify two columns, enlarged weather summary, aligned heights, no overlap, and no narrow phone clone. |
 | R13 | Intermediate widths reflow fluidly. Text remains usable at 200% browser zoom and a 320 CSS px reflow width. | Resize continuously from 320 to 1440 CSS px and test 200% zoom; verify no overlap, two-dimensional scrolling, or hidden controls. |
 | R14 | About identifies **Zehan** and explains the method and limitation, linked NWS/EPA guidance, Open-Meteo source and model limitation, privacy, and complete art credits. | Compare the rendered screen with the About-screen content list below and verify every item and external link. |
 | R15 | Loading, denied-location, location-unavailable, no-result, critical missing-data, and weather-service-error states use plain language and an appropriate next action. Retry preserves the selected place. Loading/errors are programmatically announced without moving focus unexpectedly. | Simulate each state; verify message, recovery action, preserved place, `aria-live` announcement, and stable focus. |
@@ -183,6 +183,11 @@ The phone uses this order; laptop may arrange the same groups in two columns:
 - October 1, 2026: The Developer rejected the optional decorative motif without
   replacement. The production inventory is now 36 assets, all with a direct
   character, weather, or reminder function.
+- October 2, 2026: The Developer removed the redundant “At a glance / This
+  week” section because the seven-date selector already provides the weekly
+  overview. R12 now ends with reminders and Changes later. The Developer also
+  confirmed that sunglasses remain conditional on the existing UV Index 3+
+  sun-protection rule and requested smaller sunglasses and umbrella layers.
 
 ## Approval
 

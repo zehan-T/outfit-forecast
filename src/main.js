@@ -6,7 +6,6 @@ import { accessoryPathsFor, nextOutfitIndex, selectChangesLaterWording, selectOu
 
 const ui = {
   dateStrip: document.querySelector("#date-strip"),
-  weekGrid: document.querySelector("#week-grid"),
   selectedDateLabel: document.querySelector("#selected-date-label"),
   placeName: document.querySelector("#place-name"),
   forecastStatus: document.querySelector("#forecast-status"),
@@ -165,6 +164,7 @@ function renderAccessories(day) {
   ui.wearableLayers.replaceChildren(...paths.map((filename) => {
     const image = document.createElement("img");
     image.src = `assets/accessories/final/${filename}`;
+    image.className = `accessory-layer accessory-${filename.replace(".png", "")}`;
     image.alt = "";
     return image;
   }));
@@ -179,15 +179,6 @@ function renderDateStrip(selectedIndex) {
     button.dataset.dayIndex = String(index);
     button.innerHTML = `<strong>${day.shortLabel}</strong><span>${day.highF}° / ${day.lowF}°</span><span>${day.condition}</span>`;
     return button;
-  }));
-}
-
-function renderWeek() {
-  ui.weekGrid.replaceChildren(...activeDays.map((day) => {
-    const article = document.createElement("article");
-    article.className = "week-day";
-    article.innerHTML = `<strong>${day.weekday}</strong><img src="${iconPath(day.icon)}" alt=""><span>${day.condition}</span><span>${day.highF}° / ${day.lowF}°</span>`;
-    return article;
   }));
 }
 
@@ -268,7 +259,6 @@ async function loadForecast(place) {
     activeDays = days;
     activeUpdatedTime = formatUpdateTime(payload.current?.time);
     selectedDayIndex = 0;
-    renderWeek();
     renderSelectedDay(0);
     showLocationMessage(`Showing the seven-day forecast for ${activePlace.label}.`);
   } catch (error) {
@@ -337,7 +327,6 @@ ui.fashionShow.addEventListener("click", () => {
   ui.appStatus.textContent = `Outfit ${nextIndex + 1} of 3 selected and saved for ${day.shortLabel}.`;
 });
 
-renderWeek();
 renderSelectedDay(0);
 document.documentElement.dataset.appReady = "true";
 

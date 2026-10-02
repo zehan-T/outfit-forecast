@@ -94,7 +94,7 @@ and viewport/keyboard/accessibility checks at every UI checkpoint.
   attribution, affirmation response, and Fashion show; confirm one shared
   recommendation state drives every dependent output (R2, R5–R11)
 - [x] **Checkpoint 7 — laptop and fluid layouts:** implement the approved
-  laptop two-column composition and seven-day overview, then tune intermediate
+  laptop two-column composition and weather evidence, then tune intermediate
   widths without changing the phone information order; verify at 320, 375, 767,
   1024, 1365, and 1440 CSS px plus 200% zoom (R11–R13)
 - [x] **Checkpoint 8 — About screen:** implement every approved content group,
@@ -308,6 +308,13 @@ Record material plan changes and why they were made.
   scan found no credential-like values. Added `verification.md` tracing R1–R21
   and excluded local headless-browser profiles from version control. R20 public
   deployment and R21 peer usability/revision remain intentionally pending.
+- October 2, 2026: During final Developer review, aligned Use my location with
+  Search inside the same control row, reduced the sunglasses and umbrella layer
+  scale, retained the UV Index 3+ sunglasses eligibility rule, and removed the
+  redundant “At a glance / This week” section. Updated R12 to match the approved
+  information hierarchy. Repeat verification passed 44/44 browser-native tests,
+  including explicit checks for the UV threshold, accessory scale, removed week
+  overview, and desktop/phone location-control alignment.
 
 ## Saving transcripts
 

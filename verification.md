@@ -5,7 +5,9 @@ Local release-candidate verification for Outfit Forecast. Last updated October
 
 ## Current result
 
-- Browser-native automated suite: **41/41 passed**.
+- Browser-native automated suite: **44/44 passed**.
+- Review regression tests 42â€“44 cover the UV Index 3 threshold, removed weekly
+  overview, proportional accessory scaling, and location-action alignment.
 - Production manifest: **36 declared, 36 unique, 0 missing**.
 - Credential-pattern scan: **no matches** outside excluded artwork/test output.
 - Live Open-Meteo smoke checks: complete seven-day forecasts returned for

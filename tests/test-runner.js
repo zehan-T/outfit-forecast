@@ -541,6 +541,41 @@ addTest("loading preserves focus and the affirmation stores no response", async 
   } finally { frame.remove(); }
 });
 
+addTest("sun protection and sunglasses require UV Index 3 or higher", () => {
+  const base = { campusWmoCodes: [0], campusPrecipitationPercentages: [0], campusApparentF: [65], campusGustMph: [5] };
+  const belowThreshold = reminderRules({ ...base, dailyUvMax: 2 }, "mild");
+  const atThreshold = reminderRules({ ...base, dailyUvMax: 3 }, "mild");
+  assert(!belowThreshold.some(({ id }) => id === "sun-protection"), "UV Index 2 should not trigger sun protection");
+  assert(atThreshold.some(({ id }) => id === "sun-protection"), "UV Index 3 should trigger sun protection");
+  assert(accessoryPathsFor(belowThreshold.map(({ id }) => id), "austin", "2026-10-01").length === 0, "a sun accessory appeared below the threshold");
+  assert(accessoryPathsFor(atThreshold.map(({ id }) => id), "austin", "2026-10-01").some((path) => ["sun-visor.png", "sunglasses.png"].includes(path)), "UV Index 3 did not produce a sun accessory");
+});
+
+addTest("reviewed forecast removes the week overview and scales wearable accessories", async () => {
+  const document = await fetchDocument("../index.html");
+  const text = document.body.textContent.replace(/\s+/g, " ");
+  const stylesheet = await (await fetch("../styles.css")).text();
+  assert(!document.querySelector(".week-overview") && !text.includes("At a glance") && !text.includes("This week"), "removed week overview is still present");
+  assert(stylesheet.includes(".accessory-sunglasses") && stylesheet.includes("scale(0.5)"), "sunglasses scale adjustment is missing");
+  assert(stylesheet.includes(".accessory-umbrella") && stylesheet.includes("scale(0.72)"), "umbrella scale adjustment is missing");
+});
+
+addTest("Search and Use my location align on laptops and stack evenly on phones", async () => {
+  for (const width of [320, 1440]) {
+    const frame = await loadForecastFrame(width);
+    try {
+      const document = frame.contentDocument;
+      const search = document.querySelector("#location-form button[type='submit']").getBoundingClientRect();
+      const location = document.querySelector("#use-location").getBoundingClientRect();
+      if (width === 1440) {
+        assert(Math.abs(search.top - location.top) < 2 && Math.abs(search.height - location.height) < 2, "desktop location actions are not aligned");
+      } else {
+        assert(location.top >= search.bottom && Math.abs(search.width - location.width) < 2, "phone location actions do not stack at equal width");
+      }
+    } finally { frame.remove(); }
+  }
+});
+
 async function run() {
   const results = document.querySelector("#results");
   let failures = 0;
