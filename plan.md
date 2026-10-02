@@ -326,6 +326,9 @@ Record material plan changes and why they were made.
 - October 2, 2026: Removed the non-semantic decorative ring behind the character,
   moved the sunglasses farther left, and lowered the umbrella so its bottom
   aligns with the character's toes.
+- October 2, 2026: Final sunglasses alignment review moved the head-mounted
+  sunglasses slightly right while preserving their approved height and scale;
+  the regression suite remained at 44/44 passing tests.
 
 ## Saving transcripts
 

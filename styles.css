@@ -272,7 +272,7 @@ input::placeholder { color: #727988; }
 .wearable-layers { position: absolute; inset: 0; pointer-events: none; }
 .wearable-layers img { position: absolute; inset: 0; }
 .wearable-layers .accessory-sunglasses {
-  transform: translate(-1%, -11%) rotate(-4deg) scale(0.42);
+  transform: translate(1.5%, -11%) rotate(-4deg) scale(0.42);
   transform-origin: 50% 27%;
 }
 .wearable-layers .accessory-sun-visor {
