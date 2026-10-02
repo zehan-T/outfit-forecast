@@ -404,6 +404,10 @@ Record material plan changes and why they were made.
   scale and moved it 6% downward on the shared character stage. A dedicated
   cold-outfit preview confirmed that the scarf clears the face and the gloves
   remain aligned with the hands; the 46/46 browser suite passed again.
+- October 2, 2026: Recolored the cold-weather scarf and gloves from dark green
+  to warm oatmeal beige while preserving the transparent layer, textile detail,
+  approved 42% scale, and character alignment. The composited preview passed
+  visual review without edge or placement regressions.
 
 ## Saving transcripts
 
