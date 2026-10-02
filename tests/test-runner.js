@@ -556,9 +556,9 @@ addTest("reviewed forecast removes the week overview and scales wearable accesso
   const text = document.body.textContent.replace(/\s+/g, " ");
   const stylesheet = await (await fetch("../styles.css")).text();
   assert(!document.querySelector(".week-overview") && !text.includes("At a glance") && !text.includes("This week"), "removed week overview is still present");
-  assert(stylesheet.includes(".accessory-sunglasses") && stylesheet.includes("scale(0.44)"), "sunglasses scale adjustment is missing");
+  assert(stylesheet.includes(".accessory-sunglasses") && stylesheet.includes("scale(0.42)"), "sunglasses scale adjustment is missing");
   assert(stylesheet.includes(".accessory-sun-visor") && stylesheet.includes("scale(0.46)"), "sun visor alignment adjustment is missing");
-  assert(stylesheet.includes(".accessory-umbrella") && stylesheet.includes("scale(0.72)"), "umbrella scale adjustment is missing");
+  assert(stylesheet.includes(".accessory-umbrella") && stylesheet.includes("scale(0.54)"), "umbrella scale adjustment is missing");
 });
 
 addTest("Search and Use my location align on laptops and stack evenly on phones", async () => {

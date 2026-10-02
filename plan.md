@@ -319,6 +319,10 @@ Record material plan changes and why they were made.
   character, centered and slightly reduced the sunglasses over the eyes, and
   added a separate head anchor and scale for the sun visor. The browser-native
   regression suite remained at 44/44 passing tests.
+- October 2, 2026: A second accessory review moved the sunglasses from the eyes
+  to the top of the hair with a slight left/up adjustment and reduced the
+  umbrella to 75% of its previous displayed scale. Repeat verification remained
+  at 44/44 passing tests.
 
 ## Saving transcripts
 
