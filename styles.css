@@ -268,22 +268,11 @@ input::placeholder { color: #727988; }
   overflow: hidden;
 }
 
-.character-frame::after {
-  content: "";
-  position: absolute;
-  right: -3rem;
-  top: 2rem;
-  width: 9rem;
-  height: 9rem;
-  border: 1.3rem solid rgba(214, 162, 63, 0.22);
-  border-radius: 50%;
-}
-
 .character-frame img { width: min(100%, 28rem); height: 100%; object-fit: contain; object-position: center bottom; }
 .wearable-layers { position: absolute; inset: 0; pointer-events: none; }
 .wearable-layers img { position: absolute; inset: 0; }
 .wearable-layers .accessory-sunglasses {
-  transform: translate(2.5%, -11%) rotate(-4deg) scale(0.42);
+  transform: translate(-1%, -11%) rotate(-4deg) scale(0.42);
   transform-origin: 50% 27%;
 }
 .wearable-layers .accessory-sun-visor {
@@ -291,7 +280,7 @@ input::placeholder { color: #727988; }
   transform-origin: 50% 22%;
 }
 .wearable-layers .accessory-umbrella {
-  transform: translateX(12%) scale(0.54);
+  transform: translate(12%, 20%) scale(0.54);
   transform-origin: 67% 56%;
 }
 .character-copy { padding: 1.4rem 0.5rem 0.4rem; }

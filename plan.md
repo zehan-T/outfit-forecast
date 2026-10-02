@@ -323,6 +323,9 @@ Record material plan changes and why they were made.
   to the top of the hair with a slight left/up adjustment and reduced the
   umbrella to 75% of its previous displayed scale. Repeat verification remained
   at 44/44 passing tests.
+- October 2, 2026: Removed the non-semantic decorative ring behind the character,
+  moved the sunglasses farther left, and lowered the umbrella so its bottom
+  aligns with the character's toes.
 
 ## Saving transcripts
 
