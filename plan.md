@@ -171,7 +171,7 @@ approved intended result changes.
 
 - [x] `P1` recorded
 - [x] `P2` recorded
-- [ ] `P3` recorded
+- [x] `P3` recorded
 - [ ] Findings summarized and improvement selected
 
 ### Facilitator checklist
@@ -206,19 +206,19 @@ the session. Keep interpretation out of the observation fields.
 
 #### P3
 
-- Date and device/viewport: `[record]`
-- Task 1 actions/comments/success/barriers: `[record]`
-- Task 2 actions/comments/success/barriers: `[record]`
-- Task 3 actions/comments/success/barriers: `[record]`
-- Task 4 actions/comments/success/barriers: `[record]`
-- Session-level questions or possible changes: `[record]`
+- Date and device/viewport: `October 2, 2026; Apple laptop; exact viewport not recorded.`
+- Task 1 actions/comments/success/barriers: `Used a Pomona, Missouri place search, reached the recommendation “A clean layer for a mild day,” and reported no barrier.`
+- Task 2 actions/comments/success/barriers: `Selected October 8 and identified both applicable Remember items: “Plan for sun protection today; the UV Index reaches 4.55.” and “32 mph gusts favor a close-fitting jacket or scarf.” This shows successful interpretation of what to carry or add for the later date; no barrier was reported.`
+- Task 3 actions/comments/success/barriers: `Used Fashion show to change clothes successfully, left the date, returned, and reported that the clothing remained unchanged. No persistence barrier was reported.`
+- Task 4 actions/comments/success/barriers: `Identified Open-Meteo as the weather-data source and Zehan as the creator, then found How recommendations work, Guidance sources, Art credits, and Privacy. When asked what the app saves, the participant said “my address and my outfit.” The outfit-choice part is correct, but “address” does not distinguish the selected place record or rounded device coordinates from a street address.`
+- Session-level questions or possible changes: `Privacy-comprehension barrier repeated across P1–P3. The content should explicitly name what stays in this browser and what the app does not save.`
 
 ### Findings template
 
-- Recurring successes: `[complete after P1-P3]`
-- Recurring barriers, with session evidence: `[complete after P1-P3]`
-- Selected meaningful improvement and rationale: `[complete after P1-P3]`
-- Build steps and repeat-verification checks: `[complete after selection]`
+- Recurring successes: `P1–P3 all completed place search, understood an outfit recommendation and the October 8 weather reminders, changed clothing with Fashion show, confirmed the choice persisted after leaving and returning, and found Open-Meteo, Zehan, and the required About sections.`
+- Recurring barriers, with session evidence: `Privacy meaning was unclear in all three sessions. P1 said the app saves an address; P2 said it saves IP and search history; P3 said it saves an address and an outfit. Only P3 mentioned outfit choices, and none clearly identified the local-only most-recent-place record or rounded device coordinates.`
+- Proposed meaningful improvement and rationale: `Pending Developer approval: rewrite Privacy as a short “Saved on this device” list plus a direct “Not saved” statement. Name the most recent selected place, rounded device coordinates only after Use my location, and outfit choices; explicitly state that the app does not save IP addresses or search history. Keep Clear saved data immediately below. This directly addresses the only barrier repeated across P1–P3.`
+- Proposed build steps and repeat-verification checks: `Update About privacy copy without changing storage behavior; add an automated content assertion for the saved/not-saved statements; recheck phone/laptop About layouts, Clear saved data, and the full browser suite; redeploy and verify the public page.`
 
 ## Revisions
 
