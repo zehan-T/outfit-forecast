@@ -188,12 +188,12 @@ the session. Keep interpretation out of the observation fields.
 
 #### P1
 
-- Date and device/viewport: `[record]`
-- Task 1 actions/comments/success/barriers: `[record]`
-- Task 2 actions/comments/success/barriers: `[record]`
-- Task 3 actions/comments/success/barriers: `[record]`
-- Task 4 actions/comments/success/barriers: `[record]`
-- Session-level questions or possible changes: `[record]`
+- Date and device/viewport: `October 2, 2026; HP laptop; exact viewport not recorded.`
+- Task 1 actions/comments/success/barriers: `Used a South Dakota place search and reached an outfit recommendation. No barrier was reported.`
+- Task 2 actions/comments/success/barriers: `Read the recommendation “Rich tones, light layers.” A later-date selection, carry decision, and explanation were not recorded and require follow-up.`
+- Task 3 actions/comments/success/barriers: `Used Fashion show to change clothes successfully. Leaving the date, returning to it, and the participant's observation about persistence were not recorded and require follow-up.`
+- Task 4 actions/comments/success/barriers: `Identified Open-Meteo as the weather-data source and Zehan as the creator. What the app saves was not recorded and requires follow-up.`
+- Session-level questions or possible changes: `No barrier or requested change was recorded. Complete the missing task observations before marking P1 recorded.`
 
 #### P2
 
