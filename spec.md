@@ -126,7 +126,7 @@ All remain campus-appropriate and preserve the approved character identity and n
 
 Wearable accessories are separate aligned transparent PNG layers rather than
 baked into outfit images. The sun visor appears only for the hot category when
-the daily maximum UV Index is strictly above 3; precipitation at 30%+ may show the umbrella; and a cool/cold
+the daily maximum UV Index reaches 3; precipitation at 30%+ may show the umbrella; and a cool/cold
 category with gusts at 25 mph+ may show the cold/wind layer. The selected
 record and the same reminder triggers control these layers. Missing optional
 data must omit its accessory rather than fabricate a condition.
@@ -205,8 +205,8 @@ The phone uses this order; laptop may arrange the same groups in two columns:
   experience. UV Index 3+ now uses only the sun visor; the sunglasses source
   file remains archived in the manifest with no active trigger.
 - October 2, 2026: The Developer limited the sun visor to the hot thermal
-  category with a daily maximum UV Index strictly above 3. UV 3 still produces
-  a general sun-protection reminder, but it does not render the visor.
+  category, then confirmed that its boundary begins at daily maximum UV Index
+  3. Non-Hot categories omit the visor while keeping applicable sun protection.
 
 ## Approval
 

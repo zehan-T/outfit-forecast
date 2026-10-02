@@ -552,7 +552,7 @@ addTest("loading preserves focus and the affirmation stores no response", async 
   } finally { frame.remove(); }
 });
 
-addTest("sun protection starts at UV 3 but the sun visor requires Hot and UV above 3", () => {
+addTest("the sun visor requires Hot and UV Index 3 or higher", () => {
   const base = { campusWmoCodes: [0], campusPrecipitationPercentages: [0], campusApparentF: [65], campusGustMph: [5] };
   const belowThreshold = reminderRules({ ...base, dailyUvMax: 2 }, "mild");
   const atThreshold = reminderRules({ ...base, dailyUvMax: 3 }, "mild");
@@ -560,7 +560,7 @@ addTest("sun protection starts at UV 3 but the sun visor requires Hot and UV abo
   assert(!belowThreshold.some(({ id }) => id === "sun-protection"), "UV Index 2 should not trigger sun protection");
   assert(atThreshold.some(({ id }) => id === "sun-protection"), "UV Index 3 should trigger sun protection");
   assert(accessoryPathsFor(belowThreshold.map(({ id }) => id), "hot", 2).length === 0, "a sun accessory appeared below the threshold");
-  assert(!accessoryPathsFor(atThreshold.map(({ id }) => id), "hot", 3).includes("sun-visor.png"), "UV Index 3 should not produce the sun visor");
+  assert(accessoryPathsFor(atThreshold.map(({ id }) => id), "hot", 3).includes("sun-visor.png"), "Hot with UV Index 3 did not produce the sun visor");
   assert(!accessoryPathsFor(aboveThreshold.map(({ id }) => id), "warm", 4).includes("sun-visor.png"), "a non-Hot category produced the sun visor");
   assert(accessoryPathsFor(aboveThreshold.map(({ id }) => id), "hot", 4).includes("sun-visor.png"), "Hot with UV Index 4 did not produce the sun visor");
 });

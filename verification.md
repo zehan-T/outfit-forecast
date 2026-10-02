@@ -14,7 +14,7 @@ Release verification for Outfit Forecast. Last updated October
   Open-Meteo data.
 - Review regression tests 42â€“44 cover the distinct sun-protection/visor
   thresholds, removed weekly overview, proportional accessory scaling, and
-  location-action alignment. The visor requires Hot and UV above 3.
+  location-action alignment. The visor requires Hot and UV Index 3 or higher.
 - Browser test 45 verifies the shared 2:3 character/accessory stage at 320,
   767, 1024, and 1440 CSS px; browser test 32 verifies the approved narrow-screen
   content order.
