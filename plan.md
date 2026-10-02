@@ -169,7 +169,7 @@ approved intended result changes.
 
 ### Session records
 
-- [ ] `P1` recorded
+- [x] `P1` recorded
 - [ ] `P2` recorded
 - [ ] `P3` recorded
 - [ ] Findings summarized and improvement selected
@@ -192,8 +192,8 @@ the session. Keep interpretation out of the observation fields.
 - Task 1 actions/comments/success/barriers: `Used a South Dakota place search and reached an outfit recommendation. No barrier was reported.`
 - Task 2 actions/comments/success/barriers: `Selected October 8 and identified both applicable Remember items: “Plan for sun protection today; the UV Index reaches 4.55.” and “32 mph gusts favor a close-fitting jacket or scarf.” This shows successful interpretation of what to carry or add for the later date; no barrier was reported.`
 - Task 3 actions/comments/success/barriers: `Used Fashion show to change clothes successfully, left the date, returned, and reported that the clothing remained unchanged. No persistence barrier was reported.`
-- Task 4 actions/comments/success/barriers: `Identified Open-Meteo as the weather-data source and Zehan as the creator, then found How recommendations work, Guidance sources, Art credits, and Privacy. The participant's explanation of what the app saves was not recorded and requires one follow-up.`
-- Session-level questions or possible changes: `No barrier or requested change was recorded. Record the participant's understanding of saved data before marking P1 recorded.`
+- Task 4 actions/comments/success/barriers: `Identified Open-Meteo as the weather-data source and Zehan as the creator, then found How recommendations work, Guidance sources, Art credits, and Privacy. When asked what the app saves, the participant said “address.” The Privacy section was found, but the response did not include saved outfit choices or distinguish a selected place from rounded device coordinates.`
+- Session-level questions or possible changes: `Possible privacy-comprehension barrier: the participant understood the saved location as an address and did not mention outfit choices. Retain as a candidate finding and compare with P2 and P3 before selecting a revision.`
 
 #### P2
 
