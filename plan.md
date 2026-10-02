@@ -125,7 +125,7 @@ and viewport/keyboard/accessibility checks at every UI checkpoint.
 - [x] Verify that eligible outfit and reminder variations are selected independently rather than as fixed pairs
 - [x] Verify that returning to a previously selected date shows the same variations
 - [ ] Test the deployed app, independently of the local version, on a real phone and a laptop, including both screens, accessibility, and one-handed controls
-- [ ] Prepare the usability test below using the purpose, tasks, prompts, and note format in this file
+- [x] Prepare the usability test below using the purpose, tasks, prompts, and note format in this file
 - [ ] Test with three peers and record each session
 - [ ] Add the chosen improvement to this checklist, and update `spec.md` if the intended result changes
 - [ ] Implement, verify, and redeploy at least one meaningful revision
@@ -173,6 +173,52 @@ approved intended result changes.
 - [ ] `P2` recorded
 - [ ] `P3` recorded
 - [ ] Findings summarized and improvement selected
+
+### Facilitator checklist
+
+Use the public prototype at `https://zehan-t.github.io/outfit-forecast/` on the
+participant's own phone when possible. State that this is a prototype test, ask
+permission to take anonymous notes, and remind the participant they may search
+for a city instead of sharing device location. Do not coach, identify a target
+control, record names, or record precise locations. Read the four consistent
+tasks above one at a time and use only the approved non-leading prompts.
+
+For each session, replace the placeholders below with observations made during
+the session. Keep interpretation out of the observation fields.
+
+#### P1
+
+- Date and device/viewport: `[record]`
+- Task 1 actions/comments/success/barriers: `[record]`
+- Task 2 actions/comments/success/barriers: `[record]`
+- Task 3 actions/comments/success/barriers: `[record]`
+- Task 4 actions/comments/success/barriers: `[record]`
+- Session-level questions or possible changes: `[record]`
+
+#### P2
+
+- Date and device/viewport: `[record]`
+- Task 1 actions/comments/success/barriers: `[record]`
+- Task 2 actions/comments/success/barriers: `[record]`
+- Task 3 actions/comments/success/barriers: `[record]`
+- Task 4 actions/comments/success/barriers: `[record]`
+- Session-level questions or possible changes: `[record]`
+
+#### P3
+
+- Date and device/viewport: `[record]`
+- Task 1 actions/comments/success/barriers: `[record]`
+- Task 2 actions/comments/success/barriers: `[record]`
+- Task 3 actions/comments/success/barriers: `[record]`
+- Task 4 actions/comments/success/barriers: `[record]`
+- Session-level questions or possible changes: `[record]`
+
+### Findings template
+
+- Recurring successes: `[complete after P1-P3]`
+- Recurring barriers, with session evidence: `[complete after P1-P3]`
+- Selected meaningful improvement and rationale: `[complete after P1-P3]`
+- Build steps and repeat-verification checks: `[complete after selection]`
 
 ## Revisions
 
@@ -347,6 +393,10 @@ Record material plan changes and why they were made.
   GitHub Pages with enforced HTTPS, and verified direct homepage/About/assets
   loads, live Open-Meteo rendering, phone layout, and the public 45/45 browser
   suite. Checkpoint 11 and R20 are complete; real-device verification remains.
+- October 2, 2026: Prepared the usability study with the deployed URL, privacy
+  reminder, facilitator checklist, consistent tasks/prompts, anonymous P1-P3
+  note fields, and findings/improvement template. Sessions remain unrecorded
+  until three peers complete them.
 
 ## Saving transcripts
 
