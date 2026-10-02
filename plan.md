@@ -337,6 +337,11 @@ Record material plan changes and why they were made.
   location search, current weather, outfit, seven-day outlook, recommendation,
   Remember, and Changes later while preserving the laptop composition. The
   expanded browser-native suite passed 45/45 tests.
+- October 2, 2026: Prepared Checkpoint 11 by publishing the committed Project 3
+  subtree to the remote `gh-pages` branch at commit `d784d50`. GitHub rejected
+  Pages activation because the current plan does not support Pages for this
+  private repository. The repository visibility was not changed; Checkpoint 11
+  remains open pending the Developer's hosting/visibility decision.
 
 ## Saving transcripts
 

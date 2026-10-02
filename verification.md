@@ -48,6 +48,8 @@ Local release-candidate verification for Outfit Forecast. Last updated October
 
 ## Known remaining work
 
+- GitHub Pages activation is blocked while the repository remains private on
+  the current GitHub plan; the prepared `gh-pages` branch is not yet served.
 - Developer visual review and requested refinements.
 - Three anonymized peer usability sessions and one evidence-supported revision.
 - Public GitHub Pages deployment and independent phone/laptop verification.
