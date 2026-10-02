@@ -376,7 +376,8 @@ addTest("weather accessories follow reminder triggers and use the approved sun v
   const returned = accessoryPathsFor(["sun-protection", "umbrella", "wind-layer"], "austin", "2026-10-01");
   assert(first.join(",") === returned.join(","), "sun accessory changed for the same location and date");
   assert(first.includes("sun-visor.png") && !first.includes("sunglasses.png"), "approved sun visor selection is incorrect");
-  assert(first.includes("umbrella.png") && first.includes("cold-wind-scarf-gloves.png"), "weather accessory missing");
+  assert(first.includes("umbrella.png") && first.includes("cold-wind-scarf.png"), "weather accessory missing");
+  assert(!first.some((path) => path.includes("glove")), "cancelled gloves are still selected");
   assert(accessoryPathsFor([], "austin", "2026-10-01").length === 0, "accessory appeared without a trigger");
 });
 
@@ -570,7 +571,7 @@ addTest("reviewed forecast removes the week overview and scales wearable accesso
   assert(!stylesheet.includes(".accessory-sunglasses"), "cancelled sunglasses styling is still present");
   assert(stylesheet.includes(".accessory-sun-visor") && stylesheet.includes("scale(0.4)"), "sun visor alignment adjustment is missing");
   assert(stylesheet.includes(".accessory-umbrella") && stylesheet.includes("scale(0.54)"), "umbrella scale adjustment is missing");
-  assert(stylesheet.includes(".accessory-cold-wind-scarf-gloves") && stylesheet.includes("scale(0.42)"), "scarf and gloves scale adjustment is missing");
+  assert(stylesheet.includes(".accessory-cold-wind-scarf") && stylesheet.includes("scale(0.42)"), "fixed scarf scale adjustment is missing");
 });
 
 addTest("Search and Use my location align on laptops and stack evenly on phones", async () => {
@@ -596,8 +597,10 @@ addTest("character and accessories share one fixed-ratio stage at responsive wid
       const document = frame.contentDocument;
       const stage = document.querySelector(".character-stage").getBoundingClientRect();
       const character = document.querySelector("#character-image").getBoundingClientRect();
+      const layers = document.querySelector("#wearable-layers").getBoundingClientRect();
       assert(Math.abs(stage.width / stage.height - 2 / 3) < 0.01, `${width}px character stage lost its 2:3 ratio`);
       assert(Math.abs(stage.width - character.width) < 2 && Math.abs(stage.height - character.height) < 2, `${width}px character does not fill the shared stage`);
+      assert(Math.abs(stage.left - layers.left) < 2 && Math.abs(stage.top - layers.top) < 2 && Math.abs(stage.width - layers.width) < 2 && Math.abs(stage.height - layers.height) < 2, `${width}px wearable layer drifted away from its fixed stage`);
     } finally { frame.remove(); }
   }
 });

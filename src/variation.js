@@ -52,6 +52,6 @@ export function accessoryPathsFor(reminderIds, placeId, date) {
   const paths = [];
   if (ids.has("sun-protection")) paths.push("sun-visor.png");
   if (ids.has("umbrella")) paths.push("umbrella.png");
-  if (ids.has("wind-layer")) paths.push("cold-wind-scarf-gloves.png");
+  if (ids.has("wind-layer")) paths.push("cold-wind-scarf.png");
   return paths;
 }

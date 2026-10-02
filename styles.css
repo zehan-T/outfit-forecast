@@ -301,7 +301,8 @@ input::placeholder { color: #727988; }
   transform: translate(12%, 20%) scale(0.54);
   transform-origin: 67% 56%;
 }
-.wearable-layers .accessory-cold-wind-scarf-gloves {
+.wearable-layers .accessory-cold-wind-scarf {
+  inset: 0;
   transform: translateY(6%) scale(0.42);
   transform-origin: 50% 26%;
 }

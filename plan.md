@@ -408,6 +408,10 @@ Record material plan changes and why they were made.
   to warm oatmeal beige while preserving the transparent layer, textile detail,
   approved 42% scale, and character alignment. The composited preview passed
   visual review without edge or placement regressions.
+- October 2, 2026: Cancelled the gloves and replaced the combined wearable with
+  a scarf-only warm oatmeal-beige layer. The scarf now uses the same fixed 2:3
+  stage anchoring as the approved hat, and narrow/wide previews confirmed that
+  it stays aligned when the viewport changes.
 
 ## Saving transcripts
 
