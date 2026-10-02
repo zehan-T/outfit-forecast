@@ -1,13 +1,15 @@
 param(
   [string]$Root = (Split-Path -Parent $PSScriptRoot),
   [int]$Port = 4173,
+  [string]$BindAddress = '127.0.0.1',
   [int]$MaxRequests = 0
 )
 
 $ErrorActionPreference = 'Stop'
 $resolvedRoot = [System.IO.Path]::GetFullPath((Resolve-Path -LiteralPath $Root).Path)
 $rootPrefix = $resolvedRoot.TrimEnd([System.IO.Path]::DirectorySeparatorChar) + [System.IO.Path]::DirectorySeparatorChar
-$listener = [System.Net.Sockets.TcpListener]::new([System.Net.IPAddress]::Loopback, $Port)
+$listenerAddress = [System.Net.IPAddress]::Parse($BindAddress)
+$listener = [System.Net.Sockets.TcpListener]::new($listenerAddress, $Port)
 $mimeTypes = @{
   '.html' = 'text/html; charset=utf-8'
   '.css' = 'text/css; charset=utf-8'
@@ -29,7 +31,7 @@ function Send-Response {
 
 $requestCount = 0
 $listener.Start()
-Write-Host "Serving $resolvedRoot at http://127.0.0.1:$Port/"
+Write-Host "Serving $resolvedRoot at http://${BindAddress}:$Port/"
 
 try {
   while ($MaxRequests -eq 0 -or $requestCount -lt $MaxRequests) {
