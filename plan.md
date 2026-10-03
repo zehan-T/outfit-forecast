@@ -128,7 +128,7 @@ and viewport/keyboard/accessibility checks at every UI checkpoint.
 - [x] Prepare the usability test below using the purpose, tasks, prompts, and note format in this file
 - [x] Test with three peers and record each session
 - [x] Add the chosen improvement to this checklist, and update `spec.md` if the intended result changes
-- [ ] Implement, verify, and redeploy at least one meaningful revision
+- [x] Implement, verify, and redeploy at least one meaningful revision
 
 ### Deliver
 
@@ -415,6 +415,11 @@ Record material plan changes and why they were made.
 - October 2, 2026: Limited the sun visor to Hot-category days and confirmed its
   boundary at daily maximum UV Index 3. UV 2 and all non-Hot categories omit
   the visor, while the evidence-based UV 3+ sun-protection reminder remains active.
+- October 2, 2026: Completed three anonymous usability sessions. All three
+  participants completed the core flow, while all three misunderstood some
+  saved-data details. Reworked About Privacy into explicit Saved on this device
+  and Not saved by this app groups, added regression assertions, passed 46/46
+  tests plus phone/laptop visual checks, and verified the public deployment.
 
 ## Saving transcripts
 

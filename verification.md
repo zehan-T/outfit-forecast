@@ -20,6 +20,10 @@ Release verification for Outfit Forecast. Last updated October
   content order.
 - Browser test 46 verifies that all seven outlook cards include explicit
   calendar dates matching their forecast records.
+- Three-peer usability testing is complete. The repeated privacy-comprehension
+  barrier led to explicit Saved on this device and Not saved by this app groups;
+  browser test 36 now checks saved place/outfit details and the IP/search-history
+  exclusion. Phone/laptop review and the public 46/46 suite passed after redeploy.
 - Cold-weather accessory review: the final scarf-only layer passed dedicated
   narrow/wide visual checks at 42% scale with a 6% downward adjustment. It uses
   the same fixed 2:3 stage anchoring as the hat, clears the face, retains its
@@ -57,10 +61,9 @@ Release verification for Outfit Forecast. Last updated October
 | R18 limited local storage and clearing | Browser tests 19–23, 41 | Pass |
 | R19 Open-Meteo request contract/no secret | Browser tests 25, 27; live two-place check; secret scan | Pass |
 | R20 public HTTPS deployment | GitHub Pages build `d784d50`; public route and browser checks | Pass |
-| R21 three-peer usability study and revision | Usability phase | Pending |
+| R21 three-peer usability study and revision | P1–P3 records, findings, approved Privacy revision, public repeat verification | Pass |
 
 ## Known remaining work
 
 - Real-phone and independent laptop review of the deployed URL.
-- Three anonymized peer usability sessions and one evidence-supported revision.
 - Real-device screen-reader smoke check.
