@@ -67,8 +67,15 @@
         <section class="info-card" aria-labelledby="privacy-heading">
           <span class="info-number" aria-hidden="true">04</span>
           <h2 id="privacy-heading">Privacy</h2>
-          <p>Location permission is requested only after you choose “Use my location.” Exact device coordinates are used for the immediate request and rounded to two decimal places before local storage.</p>
-          <p>Only the most recent place and its non-personal outfit choices remain on this device. There are no accounts, analytics, or cross-device tracking.</p>
+          <p>Location permission is requested only after you choose “Use my location.”</p>
+          <h3>Saved on this device</h3>
+          <ul>
+            <li>The most recent selected place and the coordinates needed to reload its forecast.</li>
+            <li>When you use device location, exact coordinates are used only for the immediate request and rounded to two decimal places before local storage.</li>
+            <li>Your outfit choices for that place.</li>
+          </ul>
+          <h3>Not saved by this app</h3>
+          <p>This app does not save IP addresses or search history. There are no accounts, analytics, or cross-device tracking.</p>
           <button class="button button-secondary" id="clear-data" type="button">Clear saved data</button>
           <p class="field-message" id="clear-status" role="status" aria-live="polite"></p>
         </section>

@@ -126,8 +126,8 @@ and viewport/keyboard/accessibility checks at every UI checkpoint.
 - [x] Verify that returning to a previously selected date shows the same variations
 - [ ] Test the deployed app, independently of the local version, on a real phone and a laptop, including both screens, accessibility, and one-handed controls
 - [x] Prepare the usability test below using the purpose, tasks, prompts, and note format in this file
-- [ ] Test with three peers and record each session
-- [ ] Add the chosen improvement to this checklist, and update `spec.md` if the intended result changes
+- [x] Test with three peers and record each session
+- [x] Add the chosen improvement to this checklist, and update `spec.md` if the intended result changes
 - [ ] Implement, verify, and redeploy at least one meaningful revision
 
 ### Deliver
@@ -172,7 +172,7 @@ approved intended result changes.
 - [x] `P1` recorded
 - [x] `P2` recorded
 - [x] `P3` recorded
-- [ ] Findings summarized and improvement selected
+- [x] Findings summarized and improvement selected
 
 ### Facilitator checklist
 
@@ -217,8 +217,8 @@ the session. Keep interpretation out of the observation fields.
 
 - Recurring successes: `P1–P3 all completed place search, understood an outfit recommendation and the October 8 weather reminders, changed clothing with Fashion show, confirmed the choice persisted after leaving and returning, and found Open-Meteo, Zehan, and the required About sections.`
 - Recurring barriers, with session evidence: `Privacy meaning was unclear in all three sessions. P1 said the app saves an address; P2 said it saves IP and search history; P3 said it saves an address and an outfit. Only P3 mentioned outfit choices, and none clearly identified the local-only most-recent-place record or rounded device coordinates.`
-- Proposed meaningful improvement and rationale: `Pending Developer approval: rewrite Privacy as a short “Saved on this device” list plus a direct “Not saved” statement. Name the most recent selected place, rounded device coordinates only after Use my location, and outfit choices; explicitly state that the app does not save IP addresses or search history. Keep Clear saved data immediately below. This directly addresses the only barrier repeated across P1–P3.`
-- Proposed build steps and repeat-verification checks: `Update About privacy copy without changing storage behavior; add an automated content assertion for the saved/not-saved statements; recheck phone/laptop About layouts, Clear saved data, and the full browser suite; redeploy and verify the public page.`
+- Selected meaningful improvement and rationale: `Developer approved: rewrite Privacy as a short “Saved on this device” list plus a direct “Not saved by this app” statement. Name the most recent selected place, rounded device coordinates after Use my location, and outfit choices; explicitly state that the app does not save IP addresses or search history. Keep Clear saved data immediately below. This directly addresses the only barrier repeated across P1–P3.`
+- Build steps and repeat-verification checks: `Update About privacy copy without changing storage behavior; add an automated content assertion for the saved/not-saved statements; recheck phone/laptop About layouts, Clear saved data, and the full browser suite; redeploy and verify the public page.`
 
 ## Revisions
 
