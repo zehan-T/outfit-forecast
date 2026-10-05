@@ -468,6 +468,11 @@ Record material plan changes and why they were made.
   cached-position allowance, an HTTPS check, and distinct permission/timeout/
   unavailable guidance. Verify source syntax, responsive particle counts,
   reduced motion, replay, and all geolocation outcomes before deployment.
+- October 5, 2026: Published the restored effect and mobile-location revision
+  as public commit `96ddbb4`; GitHub Pages run `37384281371` completed
+  successfully. HTTPS source checks returned 200 and confirmed 20 visible phone
+  particles, 24 visible laptop particles, the 5.2-second effect, and the new
+  secure-context/timing/location-error handling.
 
 ## Saving transcripts
 

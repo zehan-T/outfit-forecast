@@ -11,6 +11,12 @@ Release verification for Outfit Forecast. Last updated October
   celebration.
 - Public GitHub Pages prototype: **HTTPS enabled and build successful** at
   `https://zehan-t.github.io/outfit-forecast/`.
+- Restored-effect/mobile-location deployment: public commit `96ddbb4`; GitHub
+  Pages run `37384281371` completed successfully. Homepage, stylesheet, main
+  JavaScript, provider JavaScript, and test source returned HTTP 200. Public
+  source inspection confirmed the responsive 20/24 particle structure,
+  5.2-second animation, HTTPS guard, 20-second location timeout, 10-minute
+  cached-position allowance, and distinct timeout test marker.
 - Public-route checks: homepage, About, CSS, JavaScript, and asset manifest all
   returned HTTP 200; the deployed browser suite passed 50/50 after the October
   5 revision, all outlook cards
