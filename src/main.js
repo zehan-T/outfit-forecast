@@ -30,7 +30,9 @@ const ui = {
   useLocation: document.querySelector("#use-location"),
   affirmation: document.querySelector("#affirmation"),
   affirmationFeedback: document.querySelector("#affirmation-feedback"),
-  fashionShow: document.querySelector("#fashion-show"),
+  celebrationLayer: document.querySelector("#celebration-layer"),
+  fashionShowButtons: [...document.querySelectorAll("[data-fashion-show]")],
+  reminderCard: document.querySelector(".reminder-card"),
   reminderList: document.querySelector("#reminder-list"),
   changesCopy: document.querySelector("#changes-copy"),
   recommendationHeading: document.querySelector("#recommendation-heading"),
@@ -47,6 +49,7 @@ let lastRequestedPlace;
 let locationChoices = [];
 let selectedDayIndex = 0;
 let selectedOutfitIndex = 0;
+let celebrationTimeout;
 let busy = false;
 
 const dateFormatter = new Intl.DateTimeFormat("en-US", {
@@ -151,8 +154,11 @@ function renderRecommendationDetails(day) {
     item.innerHTML = `<img src="assets/icons/reminders/final/${icon}.svg" alt=""><span>${wording.text}</span>`;
     return item;
   });
+  const remindersAreEmpty = reminderItems.length === 0;
+  ui.reminderCard.classList.toggle("is-empty", remindersAreEmpty);
   if (!reminderItems.length) {
     const item = document.createElement("li");
+    item.className = "reminder-empty";
     item.textContent = "No extra weather reminder is needed for this campus day.";
     reminderItems.push(item);
   }
@@ -323,11 +329,18 @@ ui.retryWeather.addEventListener("click", () => {
 
 ui.affirmation.addEventListener("click", () => {
   ui.affirmationFeedback.hidden = false;
+  ui.celebrationLayer.classList.remove("is-celebrating");
+  void ui.celebrationLayer.offsetWidth;
+  ui.celebrationLayer.classList.add("is-celebrating");
   ui.appStatus.textContent = "Stunning confirmed.";
-  window.setTimeout(() => { ui.affirmationFeedback.hidden = true; }, 2600);
+  window.clearTimeout(celebrationTimeout);
+  celebrationTimeout = window.setTimeout(() => {
+    ui.affirmationFeedback.hidden = true;
+    ui.celebrationLayer.classList.remove("is-celebrating");
+  }, 2600);
 });
 
-ui.fashionShow.addEventListener("click", () => {
+function showNextOutfit() {
   const day = activeDays[selectedDayIndex];
   const saved = saveNewestLocation(activePlace);
   activePlace.id = saved.location.id;
@@ -335,7 +348,9 @@ ui.fashionShow.addEventListener("click", () => {
   saveOutfitOverride(activePlace.id, day.date, day.category, nextIndex);
   renderSelectedDay(selectedDayIndex);
   ui.appStatus.textContent = `Outfit ${nextIndex + 1} of 3 selected and saved for ${day.shortLabel}.`;
-});
+}
+
+ui.fashionShowButtons.forEach((button) => button.addEventListener("click", showNextOutfit));
 
 renderSelectedDay(0);
 document.documentElement.dataset.appReady = "true";

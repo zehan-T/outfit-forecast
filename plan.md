@@ -129,6 +129,8 @@ and viewport/keyboard/accessibility checks at every UI checkpoint.
 - [x] Test with three peers and record each session
 - [x] Add the chosen improvement to this checklist, and update `spec.md` if the intended result changes
 - [x] Implement, verify, and redeploy at least one meaningful revision
+- [x] Implement the approved October 5 phone layout and outfit-celebration revision
+- [ ] Verify the October 5 revision at 320, 375, 767, 1024, and 1440 CSS px, rerun the complete suite, and redeploy
 
 ### Deliver
 
@@ -420,6 +422,24 @@ Record material plan changes and why they were made.
   saved-data details. Reworked About Privacy into explicit Saved on this device
   and Not saved by this app groups, added regression assertions, passed 46/46
   tests plus phone/laptop visual checks, and verified the public deployment.
+- October 2, 2026: The P1–P3 sessions supplied independent deployed-site
+  functional review on HP and Apple laptops. The combined real-device checklist
+  remains open only for a physical phone, one-handed use, and real assistive
+  technology. The brief references a provided `debrief.md`, but no such template
+  is present in Project 3 or the workspace.
+- October 5, 2026: The Developer approved a post-usability interface revision.
+  On phones, Fashion show moves directly below the outfit image while the
+  seven-day outlook remains after the outfit card. The weather card gains an
+  enlarged icon beside the temperature and a single compact fact row; an empty
+  Remember card becomes smaller; and the affirmation adds a temporary gold
+  sparkle/meteor overlay to the outfit image with a reduced-motion fallback.
+- October 5, 2026: Implemented the approved revision and expanded the browser
+  suite from 46 to 50 tests. The authoritative browser test page passed 50/50,
+  including 320/375/767 CSS px phone layout checks and a 1024 CSS px action
+  placement check. Laptop review at 1440 CSS px confirmed the two-column layout.
+  The optional `scripts/test.ps1` wrapper still returned an empty early result
+  twice, so no further wrapper changes were attempted; its underlying browser
+  test page is the documented authoritative runner and passed in full.
 
 ## Saving transcripts
 

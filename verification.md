@@ -1,15 +1,19 @@
 # Verification Record
 
 Release verification for Outfit Forecast. Last updated October
-2, 2026.
+5, 2026.
 
 ## Current result
 
-- Browser-native automated suite: **46/46 passed**.
+- Browser-native automated suite: **50/50 passed** locally. The four October 5
+  regression tests cover the responsive Fashion show placement, compact
+  horizontal weather evidence, empty Remember state, and replayable outfit
+  celebration.
 - Public GitHub Pages prototype: **HTTPS enabled and build successful** at
   `https://zehan-t.github.io/outfit-forecast/`.
 - Public-route checks: homepage, About, CSS, JavaScript, and asset manifest all
-  returned HTTP 200; the deployed browser suite passed 46/46, all outlook cards
+  returned HTTP 200; the deployed browser suite passed 46/46 before the October
+  5 revision, all outlook cards
   showed explicit calendar dates, and the public forecast rendered live Austin
   Open-Meteo data.
 - Review regression tests 42â€“44 cover the distinct sun-protection/visor
@@ -34,6 +38,13 @@ Release verification for Outfit Forecast. Last updated October
   Austin and Chicago with local timezone and imperial values.
 - Layout checks: 320, 375, 767, 1024, 1365, and 1440 CSS px passed. The 320 px
   reflow check also represents a 640 px viewport at 200% zoom.
+- October 5 layout review confirmed that phone Fashion show sits directly below
+  the outfit image while the seven-day outlook remains after the outfit card;
+  the weather icon aligns beside the temperature; all three facts remain in one
+  row; and laptop retains Fashion show in the recommendation panel.
+- The optional `scripts/test.ps1` wrapper returned an empty early result twice
+  during the October 5 run. Per `AGENTS.md`, the browser test page remains the
+  authoritative runner; its captured result passed 50/50.
 - Temporary Chromium profile directories are excluded by `.gitignore`; retained
   screenshots in `tests/artifacts/` are verification evidence.
 
@@ -65,5 +76,7 @@ Release verification for Outfit Forecast. Last updated October
 
 ## Known remaining work
 
-- Real-phone and independent laptop review of the deployed URL.
-- Real-device screen-reader smoke check.
+- Real-phone one-handed review of the deployed URL; independent HP/Apple laptop
+  functional review was completed during P1–P3.
+- Real-device screen-reader smoke check. The referenced `debrief.md` template is
+  not present in the workspace and remains an external deliverable dependency.

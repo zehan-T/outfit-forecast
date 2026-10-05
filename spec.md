@@ -43,16 +43,16 @@ The AI-generated concept images in `reference/` are visual-direction references,
 | ID | Requirement | Acceptance check |
 | --- | --- | --- |
 | R1 | The app has exactly two primary screens: **Outfit Forecast** and **About This Recommendation**. Each provides a visible way to reach the other without browser Back. | Starting on either screen at phone and laptop widths, activate one clearly named navigation control and arrive at the other; keyboard focus remains visible. |
-| R2 | The Outfit Forecast screen makes the character the dominant visual and shows the selected US place, selected date, current or forecast status, condition, temperature and feels-like temperature in °F, daily high/low in °F, precipitation probability, last update time, and Open-Meteo attribution. | Select today and a future date and verify every field is visible, labelled, and changes from “Current” to “Forecast” as appropriate. |
+| R2 | The Outfit Forecast screen makes the character the dominant visual and shows the selected US place, selected date, current or forecast status, condition, temperature and feels-like temperature in °F, daily high/low in °F, precipitation probability, last update time, and Open-Meteo attribution. On phones, the enlarged weather icon sits to the right of the temperature and High / low, Rain, and Updated share one compact horizontal row. | Select today and a future date and verify every field is visible and labelled, the status changes from “Current” to “Forecast” as appropriate, the icon is aligned with the temperature, and the three facts remain in one row at 320–767 CSS px. |
 | R3 | A User can search by US city/place name or five-digit ZIP code. Results are restricted to the United States and require explicit selection when more than one match exists. Empty, invalid, and no-result searches receive plain-language inline feedback. | Search a valid city, valid ZIP, ambiguous name, empty value, and nonexistent value; confirm the correct result or message. |
 | R4 | **Use my location** requests browser geolocation only after activation. Success loads weather under the label **Current location**. Denial or unavailability explains the problem without blame and leaves manual search usable. | Mock allowed, denied, unavailable, and timed-out geolocation; confirm no prompt occurs before activation and search remains available. |
 | R5 | The date selector covers today plus the next six local calendar dates. Changing it updates the single shared recommendation state and all dependent content. | Select each date and verify date, forecast status, character, wearable accessories, icon, recommendation, reminders, and Changes later content all refer to it. |
 | R6 | The character uses one of five thermal categories—hot, warm, mild, cool, or cold—and one of three outfit variations in that category. Weather-responsive sun visor, umbrella, and scarf render as separate transparent layers. Identity, front-facing standing pose, scale, and transparent-canvas alignment remain consistent. | Test immediately below, at, and above every boundary; verify the category and alignment of all three category images, then trigger and remove every accessory layer without shifting the character. |
-| R7 | The exact affirmation label is **“i feel so stunning today”**. Activation plays a short celebratory response, respects reduced motion, announces a concise confirmation, and stores no personal response. | Activate by pointer and keyboard with normal and reduced-motion settings; verify visible/announced feedback and no new personal-data storage. |
+| R7 | The exact affirmation label is **“i feel so stunning today”**. Activation overlays the outfit image with a short gold sparkle and meteor-trail celebration, respects reduced motion with a static glow, announces a concise confirmation, and stores no personal response. | Activate repeatedly by pointer and keyboard with normal and reduced-motion settings; verify the image celebration restarts, visible/announced feedback appears, and no new personal-data storage is created. |
 | R8 | **Fashion show** cycles through the three outfits in the current category without an immediate repeat. The manually chosen outfit becomes that location/date/category's stable selection. | From the initial outfit, activate twice to see the other two variations and a third time to return to the first; leave, return, and reload to verify the last choice remains. |
 | R9 | Only applicable reminders appear. Thunder safety is first and direct; other reminders may cover umbrella, sun protection, hydration, wind/layers, and snow/ice footwear. Each reminder includes useful triggering evidence, such as “40% chance of rain.” | Feed fixtures that trigger each rule alone and in combination; verify inclusion, exclusion, priority, and evidence. |
 | R10 | **Changes later** appears when the campus-day apparent-temperature range is at least 12°F or precipitation begins after morning. It states what changes rather than giving a generic warning. | Test no change, exactly 12°F, 11°F, and precipitation beginning after morning; verify boundary behavior and copy. |
-| R11 | Phone layout (up to 767 CSS px) is one column: compact header/location controls, horizontal seven-date selector, character and main recommendation before evidence, then reminders and attribution. No essential action requires hover or swipe. | At 320, 375, and 767 CSS px, verify no horizontal page scroll or clipping, frequent controls of at least 44 × 44 CSS px, and full tap/keyboard operation. |
+| R11 | Phone layout (up to 767 CSS px) is one column: compact header/location controls, current weather, character, a Fashion show control directly below the outfit image, horizontal seven-date selector, recommendation, reminders, and attribution. An empty Remember card uses a compact state. No essential action requires hover or swipe. | At 320, 375, and 767 CSS px, verify the order, the Fashion show control's proximity to the image, the compact empty-reminder state, no horizontal page scroll or clipping, frequent controls of at least 44 × 44 CSS px, and full tap/keyboard operation. |
 | R12 | Laptop layout (1024 CSS px and above) uses a true two-column composition: top navigation/location/date; character at left; larger weather summary, recommendation, affirmation, Fashion show, reminders, and Changes later at right. Primary columns align and do not overlap. | At 1024, 1365, and 1440 CSS px, verify two columns, enlarged weather summary, aligned heights, no overlap, and no narrow phone clone. |
 | R13 | Intermediate widths reflow fluidly. Text remains usable at 200% browser zoom and a 320 CSS px reflow width. | Resize continuously from 320 to 1440 CSS px and test 200% zoom; verify no overlap, two-dimensional scrolling, or hidden controls. |
 | R14 | About identifies **Zehan** and explains the method and limitation, linked NWS/EPA guidance, Open-Meteo source and model limitation, privacy, and complete art credits. Privacy uses explicit **Saved on this device** and **Not saved by this app** groups. | Compare the rendered screen with the About-screen content list below and verify every item and external link. Confirm the privacy groups name saved place/outfit data and explicitly exclude IP-address and search-history storage. |
@@ -69,9 +69,10 @@ visor, umbrella, and cold/wind layer. Sunglasses are retired and must never
 render; their source PNG is retained only as an archived asset.
 
 Current approved R11 narrow-screen order: location search, current weather,
-outfit, seven-day outlook, recommendation, Remember, then Changes later. The
-character and active accessories share one fixed 2:3 stage so they scale and
-move together at every responsive width.
+outfit with Fashion show immediately below its image, seven-day outlook,
+recommendation, Remember, then Changes later. The character and active
+accessories share one fixed 2:3 stage so they scale and move together at every
+responsive width. Laptop keeps Fashion show in the recommendation panel.
 
 Current approved R5 date-card detail: every seven-day outlook card shows both
 its relative/day label and an explicit abbreviated month/day calendar date.
@@ -211,6 +212,12 @@ The phone uses this order; laptop may arrange the same groups in two columns:
   completed the core flow but misunderstood saved data. The Developer approved
   a clearer Saved/Not saved Privacy structure that explicitly names local place
   and outfit data and excludes IP-address and search-history storage.
+- October 5, 2026: The Developer approved a phone-focused interaction revision:
+  place Fashion show directly below the outfit image while retaining the
+  seven-day outlook after the outfit card; compact the weather evidence into a
+  temperature/icon row and a three-fact row; reduce the empty Remember state;
+  and add a gold sparkle/meteor celebration over the outfit image when the
+  affirmation is activated. Laptop retains its two-column action placement.
 
 ## Approval
 

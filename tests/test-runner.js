@@ -624,6 +624,77 @@ addTest("every seven-day outlook card includes an explicit calendar date", async
   } finally { frame.remove(); }
 });
 
+addTest("phone Fashion show sits below the outfit image while laptop keeps the recommendation action", async () => {
+  for (const width of [320, 375, 767]) {
+    const frame = await loadForecastFrame(width);
+    try {
+      const document = frame.contentDocument;
+      const imageFrame = document.querySelector(".character-frame").getBoundingClientRect();
+      const mobileAction = document.querySelector("#fashion-show").getBoundingClientRect();
+      const outfitCopy = document.querySelector(".character-copy").getBoundingClientRect();
+      const dates = document.querySelector(".date-section").getBoundingClientRect();
+      const character = document.querySelector(".character-panel").getBoundingClientRect();
+      assert(mobileAction.top >= imageFrame.bottom && mobileAction.bottom <= outfitCopy.top + 1, `${width}px Fashion show is not directly below the outfit image`);
+      assert(dates.top >= character.bottom, `${width}px seven-day outlook no longer follows the outfit card`);
+      assert(getComputedStyle(document.querySelector("#fashion-show-desktop")).display === "none", `${width}px desktop Fashion show is also visible`);
+    } finally { frame.remove(); }
+  }
+
+  const frame = await loadForecastFrame(1024);
+  try {
+    const document = frame.contentDocument;
+    assert(getComputedStyle(document.querySelector("#fashion-show")).display === "none", "mobile Fashion show remained visible on laptop");
+    assert(getComputedStyle(document.querySelector("#fashion-show-desktop")).display !== "none", "laptop Fashion show is hidden");
+  } finally { frame.remove(); }
+});
+
+addTest("phone weather icon aligns with temperature and facts stay in one row", async () => {
+  for (const width of [320, 375, 767]) {
+    const frame = await loadForecastFrame(width);
+    try {
+      const document = frame.contentDocument;
+      const card = document.querySelector(".weather-card").getBoundingClientRect();
+      const temperature = document.querySelector(".temperature-block").getBoundingClientRect();
+      const icon = document.querySelector("#weather-icon").getBoundingClientRect();
+      const facts = [...document.querySelectorAll(".weather-facts > div")].map((element) => element.getBoundingClientRect());
+      assert(icon.left >= temperature.right - 1 && icon.width >= 90, `${width}px weather icon is not enlarged to the right of temperature`);
+      assert(icon.right <= card.right + 1 && facts.every(({ right }) => right <= card.right + 1), `${width}px weather evidence extends beyond its card`);
+      assert(Math.max(...facts.map(({ top }) => top)) - Math.min(...facts.map(({ top }) => top)) < 2, `${width}px weather facts are not one horizontal row`);
+    } finally { frame.remove(); }
+  }
+});
+
+addTest("empty Remember uses the compact presentation", async () => {
+  const frame = await loadForecastFrame(375);
+  try {
+    const document = frame.contentDocument;
+    const card = document.querySelector(".reminder-card");
+    const list = document.querySelector("#reminder-list");
+    list.innerHTML = '<li class="reminder-empty">No extra weather reminder is needed for this campus day.</li>';
+    card.classList.remove("is-empty");
+    const regularHeight = card.getBoundingClientRect().height;
+    card.classList.add("is-empty");
+    const compactHeight = card.getBoundingClientRect().height;
+    const source = await (await fetch("../src/main.js")).text();
+    assert(compactHeight < regularHeight, "empty Remember did not become shorter");
+    assert(source.includes('classList.toggle("is-empty", remindersAreEmpty)'), "empty reminder state is not driven by reminder data");
+  } finally { frame.remove(); }
+});
+
+addTest("affirmation adds a replayable decorative celebration over the outfit", async () => {
+  const frame = await loadForecastFrame(375);
+  try {
+    const document = frame.contentDocument;
+    const layer = document.querySelector("#celebration-layer[aria-hidden='true']");
+    assert(layer && layer.querySelectorAll(".celebration-sparkle").length >= 6, "sparkle celebration layer is incomplete");
+    assert(layer.querySelectorAll(".celebration-meteor").length >= 3, "meteor celebration layer is incomplete");
+    document.querySelector("#affirmation").click();
+    assert(layer.classList.contains("is-celebrating"), "affirmation did not start the outfit celebration");
+    document.querySelector("#affirmation").click();
+    assert(layer.classList.contains("is-celebrating"), "repeated affirmation did not restart the outfit celebration");
+  } finally { frame.remove(); }
+});
+
 async function run() {
   const results = document.querySelector("#results");
   let failures = 0;
