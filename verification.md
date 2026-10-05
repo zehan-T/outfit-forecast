@@ -46,12 +46,15 @@ Release verification for Outfit Forecast. Last updated October
   the weather icon aligns beside the temperature; all three facts remain in one
   row; and laptop retains Fashion show in the recommendation panel.
 - The affirmation celebration is shared across phone and laptop layouts. Test
-  50 verifies that the rejected meteor effect is absent and the replacement
-  silver fairy-glitter layer covers the outfit, falls from top to bottom for
-  about 6.2 seconds, restarts, and uses 72 fine phone particles versus 42
-  laptop particles at 375, 1024, and 1440 CSS px. It also verifies that every
-  visible particle is no wider than 12 CSS px and repeatedly twinkles during
-  the fall.
+  50 now verifies that the rejected meteor effect is absent and the restored
+  larger silver fairy-glitter layer covers the outfit, falls from top to bottom
+  for about 5.2 seconds, and restarts. It preserves the prior 20-particle phone
+  treatment and uses 24 laptop particles—twice the prior laptop density—at
+  375, 1024, and 1440 CSS px.
+- Geolocation regression test 29 now covers success, permission denial, timeout,
+  and browser absence; it also checks the 20-second mobile timeout and 10-minute
+  cached-position allowance. The interface separately explains HTTPS,
+  phone-setting permission, timeout, and unavailable Location Services states.
 - Phone layout test 47 verifies Fashion show followed by the affirmation below
   the image, with Your recommendation removed through 767 CSS px. Test 49
   verifies the short empty Remember message uses the full row and stays on one

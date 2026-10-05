@@ -130,15 +130,18 @@ export function getDeviceCoordinates(geolocation) {
       }),
       (error) => {
         const denied = error?.code === 1;
+        const timedOut = error?.code === 3;
         reject(new ProviderError(
           denied
-            ? "Location access was not allowed. You can still search for a US place."
-            : "Your location could not be found. Search for a US place or try again.",
-          denied ? "location-denied" : "location-unavailable",
+            ? "Location permission is off. Enable Location for this browser in your phone settings, then try again. You can still search for a US place."
+            : timedOut
+              ? "Location timed out. Check that Location Services is on, then try again or search for a US place."
+              : "Your phone could not provide a location. Check Location Services, then try again or search for a US place.",
+          denied ? "location-denied" : timedOut ? "location-timeout" : "location-unavailable",
           error
         ));
       },
-      { enableHighAccuracy: false, timeout: 10000, maximumAge: 300000 }
+      { enableHighAccuracy: false, timeout: 20000, maximumAge: 600000 }
     );
   });
 }

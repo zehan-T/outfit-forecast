@@ -42,25 +42,6 @@ const ui = {
 
 if (!assertFixtureShape()) throw new Error("The development forecast fixture is incomplete.");
 
-function prepareFairyParticles() {
-  const fragment = document.createDocumentFragment();
-  for (let index = 0; index < 72; index += 1) {
-    const particle = document.createElement("span");
-    particle.className = "fairy-particle";
-    if (index >= 42) particle.classList.add("fairy-mobile-extra");
-    if (index % 7 === 0) particle.classList.add("fairy-orb");
-    particle.style.setProperty("--fairy-x", `${2 + ((index * 37) % 95)}%`);
-    particle.style.setProperty("--fairy-size", `${0.28 + ((index * 11) % 7) * 0.07}rem`);
-    particle.style.setProperty("--fairy-delay", `${((index * 7) % 17) * 0.095}s`);
-    particle.style.setProperty("--fairy-duration", `${3.5 + ((index * 5) % 8) * 0.08}s`);
-    particle.style.setProperty("--fairy-drift", `${-2.4 + ((index * 13) % 49) / 10}rem`);
-    fragment.append(particle);
-  }
-  ui.celebrationLayer.replaceChildren(fragment);
-}
-
-prepareFairyParticles();
-
 let activePlace = { ...demoForecast.place, kind: "manual" };
 let activeDays = demoForecast.days;
 let activeUpdatedTime = demoForecast.updatedTime;
@@ -328,10 +309,14 @@ ui.locationResultList.addEventListener("click", (event) => {
 
 ui.useLocation.addEventListener("click", async () => {
   if (busy) return;
+  if (!window.isSecureContext) {
+    showLocationMessage("Use my location needs the public HTTPS site. You can still search for a US place.", "error");
+    return;
+  }
   ui.locationResults.hidden = true;
   ui.retryWeather.hidden = true;
   setBusy(true);
-  showLocationMessage("Waiting for location permission…");
+  showLocationMessage("Allow location access when your phone asks…");
   try {
     const place = await getDeviceCoordinates(navigator.geolocation);
     await loadForecast(place);
@@ -356,7 +341,7 @@ function celebrateOutfit() {
   celebrationTimeout = window.setTimeout(() => {
     ui.affirmationFeedbacks.forEach((feedback) => { feedback.hidden = true; });
     ui.celebrationLayer.classList.remove("is-celebrating");
-  }, 6200);
+  }, 5200);
 }
 
 ui.affirmationButtons.forEach((button) => button.addEventListener("click", celebrateOutfit));

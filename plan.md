@@ -461,6 +461,13 @@ Record material plan changes and why they were made.
   particles (3.6 times the previous count) and from 12 to 42 laptop particles.
   Increased the silver-white glow, added repeated twinkling during the fall,
   and extended the complete effect to about 6.2 seconds.
+- October 5, 2026: Restored the previous larger silver fairy-glitter treatment
+  after the fine particles proved too small in review. Preserve the prior phone
+  version at 20 particles; double the prior laptop density from 12 to 24.
+  Harden Use my location for phones with a 20-second timeout, a 10-minute
+  cached-position allowance, an HTTPS check, and distinct permission/timeout/
+  unavailable guidance. Verify source syntax, responsive particle counts,
+  reduced motion, replay, and all geolocation outcomes before deployment.
 
 ## Saving transcripts
 
