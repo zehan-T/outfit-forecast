@@ -448,6 +448,10 @@ Record material plan changes and why they were made.
 - October 5, 2026: Confirmed the affirmation celebration as a shared phone and
   laptop interaction. Extended its responsive regression check to 375, 1024,
   and 1440 CSS px before redeployment.
+- October 5, 2026: Phone review found the first celebration too subtle. The
+  Developer directed a denser and brighter phone-only treatment with eight
+  additional sparkles, three additional meteor trails, and a 3.2-second
+  duration while retaining the existing laptop density.
 
 ## Saving transcripts
 

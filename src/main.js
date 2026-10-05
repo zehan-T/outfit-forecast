@@ -337,7 +337,7 @@ ui.affirmation.addEventListener("click", () => {
   celebrationTimeout = window.setTimeout(() => {
     ui.affirmationFeedback.hidden = true;
     ui.celebrationLayer.classList.remove("is-celebrating");
-  }, 2600);
+  }, 3200);
 });
 
 function showNextOutfit() {

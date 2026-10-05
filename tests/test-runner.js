@@ -689,13 +689,21 @@ addTest("affirmation adds a replayable phone and laptop celebration over the out
       const imageFrame = document.querySelector(".character-frame").getBoundingClientRect();
       const layer = document.querySelector("#celebration-layer[aria-hidden='true']");
       const layerBounds = layer.getBoundingClientRect();
+      const extraParticles = [...layer.querySelectorAll(".mobile-celebration-extra")];
       assert(layer && layer.querySelectorAll(".celebration-sparkle").length >= 6, `${width}px sparkle celebration layer is incomplete`);
       assert(layer.querySelectorAll(".celebration-meteor").length >= 3, `${width}px meteor celebration layer is incomplete`);
+      if (width < 1024) {
+        assert(layer.querySelectorAll(".celebration-sparkle").length === 14 && layer.querySelectorAll(".celebration-meteor").length === 6, `${width}px phone celebration is not dense enough`);
+        assert(extraParticles.every((particle) => getComputedStyle(particle).display !== "none"), `${width}px extra phone particles are hidden`);
+      } else {
+        assert(extraParticles.every((particle) => getComputedStyle(particle).display === "none"), `${width}px phone-only particles appear on laptop`);
+      }
       assert(Math.abs(layerBounds.left - imageFrame.left) < 2 && Math.abs(layerBounds.width - imageFrame.width) < 2, `${width}px celebration does not cover the outfit image`);
       document.querySelector("#affirmation").click();
       assert(layer.classList.contains("is-celebrating"), `${width}px affirmation did not start the outfit celebration`);
       document.querySelector("#affirmation").click();
       assert(layer.classList.contains("is-celebrating"), `${width}px repeated affirmation did not restart the outfit celebration`);
+      assert((await (await fetch("../src/main.js")).text()).includes("3200"), "celebration does not remain visible for about 3.2 seconds");
     } finally { frame.remove(); }
   }
 });

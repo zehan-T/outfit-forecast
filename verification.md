@@ -47,7 +47,9 @@ Release verification for Outfit Forecast. Last updated October
   row; and laptop retains Fashion show in the recommendation panel.
 - The affirmation celebration is shared across phone and laptop layouts. Test
   50 verifies that its decorative layer covers the outfit image, starts, and
-  restarts at 375, 1024, and 1440 CSS px.
+  restarts at 375, 1024, and 1440 CSS px. At phone width it additionally checks
+  14 sparkles, 6 meteor trails, the 3.2-second duration, and that the extra
+  particles are hidden from the laptop treatment.
 - The optional `scripts/test.ps1` wrapper returned an empty early result twice
   during the October 5 run. Per `AGENTS.md`, the browser test page remains the
   authoritative runner; its captured result passed 50/50.
