@@ -17,6 +17,11 @@ Release verification for Outfit Forecast. Last updated October
   source inspection confirmed the responsive 20/24 particle structure,
   5.2-second animation, HTTPS guard, 20-second location timeout, 10-minute
   cached-position allowance, and distinct timeout test marker.
+- Simplified-phone-search deployment: public commit `66c322a`; GitHub Pages run
+  `37385092370` completed successfully. Homepage, stylesheet, and test source
+  returned HTTP 200 and confirmed that “What should I wear?” is removed, the
+  location card is compact, and Use my location is hidden through 767 CSS px
+  while remaining in the markup for larger layouts.
 - Public-route checks: homepage, About, CSS, JavaScript, and asset manifest all
   returned HTTP 200; the deployed browser suite passed 50/50 after the October
   5 revision, all outlook cards

@@ -478,6 +478,11 @@ Record material plan changes and why they were made.
   widths up to 767 CSS px. Keep manual Search on phone and retain the aligned
   Search/Use my location controls on larger layouts. Update responsive tests,
   then redeploy and verify the public CSS and markup.
+- October 5, 2026: Deployed the simplified phone search as public commit
+  `66c322a` through successful GitHub Pages run `37385092370`. Public homepage,
+  stylesheet, and test-source checks returned 200 and confirmed the removed
+  heading, compact replacement label, phone-only location-button rule, and
+  revised responsive assertion.
 
 ## Saving transcripts
 
