@@ -483,6 +483,10 @@ Record material plan changes and why they were made.
   stylesheet, and test-source checks returned 200 and confirmed the removed
   heading, compact replacement label, phone-only location-button rule, and
   revised responsive assertion.
+- October 5, 2026: Restore only the preceding fine fairy-glitter effect while
+  preserving the simplified phone search and all other approved layout work.
+  Return to 72 phone particles, 42 laptop particles, repeated twinkling, and a
+  6.2-second duration; update responsive effect checks before redeployment.
 
 ## Saving transcripts
 
