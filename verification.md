@@ -46,10 +46,14 @@ Release verification for Outfit Forecast. Last updated October
   the weather icon aligns beside the temperature; all three facts remain in one
   row; and laptop retains Fashion show in the recommendation panel.
 - The affirmation celebration is shared across phone and laptop layouts. Test
-  50 verifies that its decorative layer covers the outfit image, starts, and
-  restarts at 375, 1024, and 1440 CSS px. At phone width it additionally checks
-  14 sparkles, 6 meteor trails, the 3.2-second duration, and that the extra
-  particles are hidden from the laptop treatment.
+  50 verifies that the rejected meteor effect is absent and the replacement
+  silver fairy-glitter layer covers the outfit, falls from top to bottom for
+  about 5.2 seconds, restarts, and uses 20 phone particles versus 12 laptop
+  particles at 375, 1024, and 1440 CSS px.
+- Phone layout test 47 verifies Fashion show followed by the affirmation below
+  the image, with Your recommendation removed through 767 CSS px. Test 49
+  verifies the short empty Remember message uses the full row and stays on one
+  line instead of inheriting the icon column.
 - The optional `scripts/test.ps1` wrapper returned an empty early result twice
   during the October 5 run. Per `AGENTS.md`, the browser test page remains the
   authoritative runner; its captured result passed 50/50.
@@ -66,11 +70,11 @@ Release verification for Outfit Forecast. Last updated October
 | R4 activation-only device location | Browser test 29 | Pass |
 | R5 seven local dates and shared selection | Browser tests 1, 14, 27; live render | Pass |
 | R6 five categories, three outfits, accessory layers | Browser tests 2, 6, 15, 30, 31 | Pass |
-| R7 exact affirmation and private feedback | Browser tests 3, 39, 41 | Pass |
+| R7 exact affirmation and private feedback | Browser tests 3, 39, 41, 50 | Pass |
 | R8 Fashion show cycle and persistence | Browser tests 17, 19, 20 | Pass |
 | R9 applicable, prioritized reminders | Browser tests 9, 10, 18 | Pass |
 | R10 concrete Changes later rules | Browser tests 11, 12, 18 | Pass |
-| R11 phone information order and controls | Browser tests 31–33, 35 | Pass |
+| R11 phone information order and controls | Browser tests 31–33, 35, 47, 49 | Pass |
 | R12 laptop two-column composition | Browser test 34 | Pass |
 | R13 fluid reflow and zoom equivalent | Browser tests 32, 34, 35, 37 | Pass |
 | R14 About identity, method, sources, privacy, credits | Browser tests 4, 36, 37 | Pass |

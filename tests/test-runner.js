@@ -398,13 +398,12 @@ addTest("phone and intermediate widths reflow without horizontal page overflow",
       const weather = document.querySelector(".weather-card").getBoundingClientRect();
       const character = document.querySelector(".character-panel").getBoundingClientRect();
       const dates = document.querySelector(".date-section").getBoundingClientRect();
-      const recommendation = document.querySelector(".recommendation-card").getBoundingClientRect();
       const reminders = document.querySelector(".detail-grid").getBoundingClientRect();
       assert(weather.top >= controls.bottom, `${width}px layout should keep current weather after search`);
       assert(character.top >= weather.bottom, `${width}px layout should keep the outfit after current weather`);
       assert(dates.top >= character.bottom, `${width}px layout should keep the seven-day outlook after the outfit`);
-      assert(recommendation.top >= dates.bottom, `${width}px layout should keep the recommendation after the outlook`);
-      assert(reminders.top >= recommendation.bottom, `${width}px layout should keep reminders after the recommendation`);
+      assert(getComputedStyle(document.querySelector(".recommendation-card")).display === "none", `${width}px should hide Your recommendation`);
+      assert(reminders.top >= dates.bottom, `${width}px layout should keep reminders after the outlook`);
     } finally { frame.remove(); }
   }
 });
@@ -438,10 +437,11 @@ addTest("320px reflow retains every primary action and content region", async ()
   const frame = await loadForecastFrame(320);
   try {
     const document = frame.contentDocument;
-    for (const selector of ["#location-form", "#date-strip", ".character-panel", ".weather-card", ".recommendation-card", "#reminder-list", "#changes-copy", "footer"]) {
+    for (const selector of ["#location-form", "#date-strip", ".character-panel", ".weather-card", "#reminder-list", "#changes-copy", "footer"]) {
       const element = document.querySelector(selector);
       assert(element && element.getBoundingClientRect().width > 0, `${selector} disappeared at 320px reflow`);
     }
+    assert(getComputedStyle(document.querySelector(".recommendation-card")).display === "none", "phone recommendation card should be removed from layout");
   } finally { frame.remove(); }
 });
 
@@ -624,19 +624,23 @@ addTest("every seven-day outlook card includes an explicit calendar date", async
   } finally { frame.remove(); }
 });
 
-addTest("phone Fashion show sits below the outfit image while laptop keeps the recommendation action", async () => {
+addTest("phone outfit actions stack below the image while laptop keeps recommendation actions", async () => {
   for (const width of [320, 375, 767]) {
     const frame = await loadForecastFrame(width);
     try {
       const document = frame.contentDocument;
       const imageFrame = document.querySelector(".character-frame").getBoundingClientRect();
-      const mobileAction = document.querySelector("#fashion-show").getBoundingClientRect();
+      const fashionShow = document.querySelector("#fashion-show").getBoundingClientRect();
+      const affirmation = document.querySelector("#affirmation").getBoundingClientRect();
       const outfitCopy = document.querySelector(".character-copy").getBoundingClientRect();
       const dates = document.querySelector(".date-section").getBoundingClientRect();
       const character = document.querySelector(".character-panel").getBoundingClientRect();
-      assert(mobileAction.top >= imageFrame.bottom && mobileAction.bottom <= outfitCopy.top + 1, `${width}px Fashion show is not directly below the outfit image`);
+      assert(fashionShow.top >= imageFrame.bottom && fashionShow.bottom <= affirmation.top + 1, `${width}px Fashion show is not directly below the outfit image`);
+      assert(affirmation.top >= fashionShow.bottom && affirmation.bottom <= outfitCopy.top + 1, `${width}px affirmation is not below Fashion show`);
       assert(dates.top >= character.bottom, `${width}px seven-day outlook no longer follows the outfit card`);
       assert(getComputedStyle(document.querySelector("#fashion-show-desktop")).display === "none", `${width}px desktop Fashion show is also visible`);
+      assert(getComputedStyle(document.querySelector("#affirmation-desktop")).display === "none", `${width}px desktop affirmation is also visible`);
+      assert(getComputedStyle(document.querySelector(".recommendation-card")).display === "none", `${width}px recommendation card is still visible`);
     } finally { frame.remove(); }
   }
 
@@ -644,7 +648,10 @@ addTest("phone Fashion show sits below the outfit image while laptop keeps the r
   try {
     const document = frame.contentDocument;
     assert(getComputedStyle(document.querySelector("#fashion-show")).display === "none", "mobile Fashion show remained visible on laptop");
+    assert(getComputedStyle(document.querySelector("#affirmation")).display === "none", "mobile affirmation remained visible on laptop");
     assert(getComputedStyle(document.querySelector("#fashion-show-desktop")).display !== "none", "laptop Fashion show is hidden");
+    assert(getComputedStyle(document.querySelector("#affirmation-desktop")).display !== "none", "laptop affirmation is hidden");
+    assert(getComputedStyle(document.querySelector(".recommendation-card")).display !== "none", "laptop recommendation card is hidden");
   } finally { frame.remove(); }
 });
 
@@ -670,18 +677,22 @@ addTest("empty Remember uses the compact presentation", async () => {
     const document = frame.contentDocument;
     const card = document.querySelector(".reminder-card");
     const list = document.querySelector("#reminder-list");
-    list.innerHTML = '<li class="reminder-empty">No extra weather reminder is needed for this campus day.</li>';
+    list.innerHTML = '<li class="reminder-empty">No extra weather reminder today.</li>';
     card.classList.remove("is-empty");
     const regularHeight = card.getBoundingClientRect().height;
     card.classList.add("is-empty");
     const compactHeight = card.getBoundingClientRect().height;
+    const emptyMessage = list.querySelector(".reminder-empty");
     const source = await (await fetch("../src/main.js")).text();
     assert(compactHeight < regularHeight, "empty Remember did not become shorter");
+    assert(emptyMessage.scrollWidth <= emptyMessage.clientWidth + 1, "empty Remember message does not fit on one line");
+    assert(emptyMessage.getBoundingClientRect().width >= list.getBoundingClientRect().width - 1, "empty Remember message is still trapped in the icon column");
+    assert(source.includes("No extra weather reminder today."), "compact empty reminder wording is missing");
     assert(source.includes('classList.toggle("is-empty", remindersAreEmpty)'), "empty reminder state is not driven by reminder data");
   } finally { frame.remove(); }
 });
 
-addTest("affirmation adds a replayable phone and laptop celebration over the outfit", async () => {
+addTest("affirmation adds a replayable silver fairy cascade over the phone and laptop outfit", async () => {
   for (const width of [375, 1024, 1440]) {
     const frame = await loadForecastFrame(width);
     try {
@@ -689,21 +700,25 @@ addTest("affirmation adds a replayable phone and laptop celebration over the out
       const imageFrame = document.querySelector(".character-frame").getBoundingClientRect();
       const layer = document.querySelector("#celebration-layer[aria-hidden='true']");
       const layerBounds = layer.getBoundingClientRect();
-      const extraParticles = [...layer.querySelectorAll(".mobile-celebration-extra")];
-      assert(layer && layer.querySelectorAll(".celebration-sparkle").length >= 6, `${width}px sparkle celebration layer is incomplete`);
-      assert(layer.querySelectorAll(".celebration-meteor").length >= 3, `${width}px meteor celebration layer is incomplete`);
+      const extraParticles = [...layer.querySelectorAll(".fairy-mobile-extra")];
+      const fairyParticles = [...layer.querySelectorAll(".fairy-particle")];
+      assert(layer && fairyParticles.length === 20, `${width}px fairy-glitter layer is incomplete`);
+      assert(!layer.querySelector(".celebration-meteor"), `${width}px rejected meteor effect remains`);
       if (width < 1024) {
-        assert(layer.querySelectorAll(".celebration-sparkle").length === 14 && layer.querySelectorAll(".celebration-meteor").length === 6, `${width}px phone celebration is not dense enough`);
         assert(extraParticles.every((particle) => getComputedStyle(particle).display !== "none"), `${width}px extra phone particles are hidden`);
       } else {
         assert(extraParticles.every((particle) => getComputedStyle(particle).display === "none"), `${width}px phone-only particles appear on laptop`);
       }
       assert(Math.abs(layerBounds.left - imageFrame.left) < 2 && Math.abs(layerBounds.width - imageFrame.width) < 2, `${width}px celebration does not cover the outfit image`);
-      document.querySelector("#affirmation").click();
+      const affirmation = document.querySelector(width >= 1024 ? "#affirmation-desktop" : "#affirmation");
+      affirmation.click();
       assert(layer.classList.contains("is-celebrating"), `${width}px affirmation did not start the outfit celebration`);
-      document.querySelector("#affirmation").click();
+      affirmation.click();
       assert(layer.classList.contains("is-celebrating"), `${width}px repeated affirmation did not restart the outfit celebration`);
-      assert((await (await fetch("../src/main.js")).text()).includes("3200"), "celebration does not remain visible for about 3.2 seconds");
+      const source = await (await fetch("../src/main.js")).text();
+      const stylesheet = await (await fetch("../styles.css")).text();
+      assert(source.includes("5200"), "fairy cascade does not remain visible for about 5.2 seconds");
+      assert(stylesheet.includes("@keyframes fairy-fall") && stylesheet.includes("110vh"), "fairy glitter does not fall from top to bottom");
     } finally { frame.remove(); }
   }
 });

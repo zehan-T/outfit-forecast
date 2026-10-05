@@ -28,8 +28,8 @@ const ui = {
   locationResultList: document.querySelector("#location-result-list"),
   retryWeather: document.querySelector("#retry-weather"),
   useLocation: document.querySelector("#use-location"),
-  affirmation: document.querySelector("#affirmation"),
-  affirmationFeedback: document.querySelector("#affirmation-feedback"),
+  affirmationButtons: [...document.querySelectorAll("[data-affirmation]")],
+  affirmationFeedbacks: [...document.querySelectorAll(".affirmation-feedback")],
   celebrationLayer: document.querySelector("#celebration-layer"),
   fashionShowButtons: [...document.querySelectorAll("[data-fashion-show]")],
   reminderCard: document.querySelector(".reminder-card"),
@@ -159,7 +159,7 @@ function renderRecommendationDetails(day) {
   if (!reminderItems.length) {
     const item = document.createElement("li");
     item.className = "reminder-empty";
-    item.textContent = "No extra weather reminder is needed for this campus day.";
+    item.textContent = "No extra weather reminder today.";
     reminderItems.push(item);
   }
   ui.reminderList.replaceChildren(...reminderItems);
@@ -327,18 +327,20 @@ ui.retryWeather.addEventListener("click", () => {
   if (lastRequestedPlace) loadForecast(lastRequestedPlace);
 });
 
-ui.affirmation.addEventListener("click", () => {
-  ui.affirmationFeedback.hidden = false;
+function celebrateOutfit() {
+  ui.affirmationFeedbacks.forEach((feedback) => { feedback.hidden = false; });
   ui.celebrationLayer.classList.remove("is-celebrating");
   void ui.celebrationLayer.offsetWidth;
   ui.celebrationLayer.classList.add("is-celebrating");
   ui.appStatus.textContent = "Stunning confirmed.";
   window.clearTimeout(celebrationTimeout);
   celebrationTimeout = window.setTimeout(() => {
-    ui.affirmationFeedback.hidden = true;
+    ui.affirmationFeedbacks.forEach((feedback) => { feedback.hidden = true; });
     ui.celebrationLayer.classList.remove("is-celebrating");
-  }, 3200);
-});
+  }, 5200);
+}
+
+ui.affirmationButtons.forEach((button) => button.addEventListener("click", celebrateOutfit));
 
 function showNextOutfit() {
   const day = activeDays[selectedDayIndex];

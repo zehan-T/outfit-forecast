@@ -452,6 +452,11 @@ Record material plan changes and why they were made.
   Developer directed a denser and brighter phone-only treatment with eight
   additional sparkles, three additional meteor trails, and a 3.2-second
   duration while retaining the existing laptop density.
+- October 5, 2026: The Developer rejected the gold meteor effect and directed a
+  silver-white fairy-glitter cascade from top to bottom with larger particles
+  and a longer 5.2-second duration. On phone, the affirmation moves below
+  Fashion show, Your recommendation is removed, and the empty Remember message
+  becomes a full-width single line instead of inheriting the icon column.
 
 ## Saving transcripts
 
