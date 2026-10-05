@@ -48,8 +48,10 @@ Release verification for Outfit Forecast. Last updated October
 - The affirmation celebration is shared across phone and laptop layouts. Test
   50 verifies that the rejected meteor effect is absent and the replacement
   silver fairy-glitter layer covers the outfit, falls from top to bottom for
-  about 5.2 seconds, restarts, and uses 20 phone particles versus 12 laptop
-  particles at 375, 1024, and 1440 CSS px.
+  about 6.2 seconds, restarts, and uses 72 fine phone particles versus 42
+  laptop particles at 375, 1024, and 1440 CSS px. It also verifies that every
+  visible particle is no wider than 12 CSS px and repeatedly twinkles during
+  the fall.
 - Phone layout test 47 verifies Fashion show followed by the affirmation below
   the image, with Your recommendation removed through 767 CSS px. Test 49
   verifies the short empty Remember message uses the full row and stays on one

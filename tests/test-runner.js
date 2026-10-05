@@ -702,13 +702,17 @@ addTest("affirmation adds a replayable silver fairy cascade over the phone and l
       const layerBounds = layer.getBoundingClientRect();
       const extraParticles = [...layer.querySelectorAll(".fairy-mobile-extra")];
       const fairyParticles = [...layer.querySelectorAll(".fairy-particle")];
-      assert(layer && fairyParticles.length === 20, `${width}px fairy-glitter layer is incomplete`);
+      const visibleParticles = fairyParticles.filter((particle) => getComputedStyle(particle).display !== "none");
+      assert(layer && fairyParticles.length === 72, `${width}px fairy-glitter layer is incomplete`);
       assert(!layer.querySelector(".celebration-meteor"), `${width}px rejected meteor effect remains`);
       if (width < 1024) {
+        assert(visibleParticles.length === 72, `${width}px phone does not show at least three times the prior glitter density`);
         assert(extraParticles.every((particle) => getComputedStyle(particle).display !== "none"), `${width}px extra phone particles are hidden`);
       } else {
+        assert(visibleParticles.length === 42, `${width}px laptop glitter density is incorrect`);
         assert(extraParticles.every((particle) => getComputedStyle(particle).display === "none"), `${width}px phone-only particles appear on laptop`);
       }
+      assert(visibleParticles.every((particle) => particle.getBoundingClientRect().width <= 12), `${width}px fairy glitter is not fine-grained`);
       assert(Math.abs(layerBounds.left - imageFrame.left) < 2 && Math.abs(layerBounds.width - imageFrame.width) < 2, `${width}px celebration does not cover the outfit image`);
       const affirmation = document.querySelector(width >= 1024 ? "#affirmation-desktop" : "#affirmation");
       affirmation.click();
@@ -717,8 +721,9 @@ addTest("affirmation adds a replayable silver fairy cascade over the phone and l
       assert(layer.classList.contains("is-celebrating"), `${width}px repeated affirmation did not restart the outfit celebration`);
       const source = await (await fetch("../src/main.js")).text();
       const stylesheet = await (await fetch("../styles.css")).text();
-      assert(source.includes("5200"), "fairy cascade does not remain visible for about 5.2 seconds");
+      assert(source.includes("6200"), "fairy cascade does not remain visible for about 6.2 seconds");
       assert(stylesheet.includes("@keyframes fairy-fall") && stylesheet.includes("110vh"), "fairy glitter does not fall from top to bottom");
+      assert(stylesheet.includes("18% { opacity: 0.28; }") && stylesheet.includes("72% { opacity: 0.32; }"), "fine glitter does not twinkle repeatedly while falling");
     } finally { frame.remove(); }
   }
 });

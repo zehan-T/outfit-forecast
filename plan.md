@@ -457,6 +457,10 @@ Record material plan changes and why they were made.
   and a longer 5.2-second duration. On phone, the affirmation moves below
   Fashion show, Your recommendation is removed, and the empty Remember message
   becomes a full-width single line instead of inheriting the icon column.
+- October 5, 2026: Increased the fairy-glitter density from 20 to 72 small phone
+  particles (3.6 times the previous count) and from 12 to 42 laptop particles.
+  Increased the silver-white glow, added repeated twinkling during the fall,
+  and extended the complete effect to about 6.2 seconds.
 
 ## Saving transcripts
 
