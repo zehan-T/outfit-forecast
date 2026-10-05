@@ -681,18 +681,23 @@ addTest("empty Remember uses the compact presentation", async () => {
   } finally { frame.remove(); }
 });
 
-addTest("affirmation adds a replayable decorative celebration over the outfit", async () => {
-  const frame = await loadForecastFrame(375);
-  try {
-    const document = frame.contentDocument;
-    const layer = document.querySelector("#celebration-layer[aria-hidden='true']");
-    assert(layer && layer.querySelectorAll(".celebration-sparkle").length >= 6, "sparkle celebration layer is incomplete");
-    assert(layer.querySelectorAll(".celebration-meteor").length >= 3, "meteor celebration layer is incomplete");
-    document.querySelector("#affirmation").click();
-    assert(layer.classList.contains("is-celebrating"), "affirmation did not start the outfit celebration");
-    document.querySelector("#affirmation").click();
-    assert(layer.classList.contains("is-celebrating"), "repeated affirmation did not restart the outfit celebration");
-  } finally { frame.remove(); }
+addTest("affirmation adds a replayable phone and laptop celebration over the outfit", async () => {
+  for (const width of [375, 1024, 1440]) {
+    const frame = await loadForecastFrame(width);
+    try {
+      const document = frame.contentDocument;
+      const imageFrame = document.querySelector(".character-frame").getBoundingClientRect();
+      const layer = document.querySelector("#celebration-layer[aria-hidden='true']");
+      const layerBounds = layer.getBoundingClientRect();
+      assert(layer && layer.querySelectorAll(".celebration-sparkle").length >= 6, `${width}px sparkle celebration layer is incomplete`);
+      assert(layer.querySelectorAll(".celebration-meteor").length >= 3, `${width}px meteor celebration layer is incomplete`);
+      assert(Math.abs(layerBounds.left - imageFrame.left) < 2 && Math.abs(layerBounds.width - imageFrame.width) < 2, `${width}px celebration does not cover the outfit image`);
+      document.querySelector("#affirmation").click();
+      assert(layer.classList.contains("is-celebrating"), `${width}px affirmation did not start the outfit celebration`);
+      document.querySelector("#affirmation").click();
+      assert(layer.classList.contains("is-celebrating"), `${width}px repeated affirmation did not restart the outfit celebration`);
+    } finally { frame.remove(); }
+  }
 });
 
 async function run() {

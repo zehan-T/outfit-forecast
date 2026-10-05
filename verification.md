@@ -45,6 +45,9 @@ Release verification for Outfit Forecast. Last updated October
   the outfit image while the seven-day outlook remains after the outfit card;
   the weather icon aligns beside the temperature; all three facts remain in one
   row; and laptop retains Fashion show in the recommendation panel.
+- The affirmation celebration is shared across phone and laptop layouts. Test
+  50 verifies that its decorative layer covers the outfit image, starts, and
+  restarts at 375, 1024, and 1440 CSS px.
 - The optional `scripts/test.ps1` wrapper returned an empty early result twice
   during the October 5 run. Per `AGENTS.md`, the browser test page remains the
   authoritative runner; its captured result passed 50/50.
