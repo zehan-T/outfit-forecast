@@ -473,6 +473,11 @@ Record material plan changes and why they were made.
   successfully. HTTPS source checks returned 200 and confirmed 20 visible phone
   particles, 24 visible laptop particles, the 5.2-second effect, and the new
   secure-context/timing/location-error handling.
+- October 5, 2026: Simplify the opening location card by deleting “What should
+  I wear?”, tightening phone padding and spacing, and hiding Use my location at
+  widths up to 767 CSS px. Keep manual Search on phone and retain the aligned
+  Search/Use my location controls on larger layouts. Update responsive tests,
+  then redeploy and verify the public CSS and markup.
 
 ## Saving transcripts
 

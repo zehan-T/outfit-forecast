@@ -419,7 +419,7 @@ addTest("frequent phone controls meet the 44 by 44 CSS pixel target", async () =
   const frame = await loadForecastFrame(320);
   try {
     const document = frame.contentDocument;
-    const selectors = ["#location-query", "#location-form button[type='submit']", "#use-location", "#affirmation", "#fashion-show", ".date-button"];
+    const selectors = ["#location-query", "#location-form button[type='submit']", "#affirmation", "#fashion-show", ".date-button"];
     for (const selector of selectors) {
       const rect = document.querySelector(selector).getBoundingClientRect();
       assert(rect.height >= 44 && rect.width >= 44, `${selector} is smaller than 44 by 44 CSS pixels`);
@@ -589,7 +589,7 @@ addTest("reviewed forecast removes the week overview and scales wearable accesso
   assert(stylesheet.includes(".accessory-cold-wind-scarf") && stylesheet.includes("scale(0.42)"), "fixed scarf scale adjustment is missing");
 });
 
-addTest("Search and Use my location align on laptops and stack evenly on phones", async () => {
+addTest("phone simplifies location search while laptop retains aligned location actions", async () => {
   for (const width of [320, 1440]) {
     const frame = await loadForecastFrame(width);
     try {
@@ -599,7 +599,9 @@ addTest("Search and Use my location align on laptops and stack evenly on phones"
       if (width === 1440) {
         assert(Math.abs(search.top - location.top) < 2 && Math.abs(search.height - location.height) < 2, "desktop location actions are not aligned");
       } else {
-        assert(location.top >= search.bottom && Math.abs(search.width - location.width) < 2, "phone location actions do not stack at equal width");
+        assert(getComputedStyle(document.querySelector("#use-location")).display === "none", "phone still shows Use my location");
+        assert(!document.body.textContent.includes("What should I wear?"), "removed location heading is still visible");
+        assert(document.querySelector("#location-heading").textContent === "Plan your campus day", "simplified location heading is missing");
       }
     } finally { frame.remove(); }
   }
