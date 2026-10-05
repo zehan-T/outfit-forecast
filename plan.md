@@ -130,7 +130,7 @@ and viewport/keyboard/accessibility checks at every UI checkpoint.
 - [x] Add the chosen improvement to this checklist, and update `spec.md` if the intended result changes
 - [x] Implement, verify, and redeploy at least one meaningful revision
 - [x] Implement the approved October 5 phone layout and outfit-celebration revision
-- [ ] Verify the October 5 revision at 320, 375, 767, 1024, and 1440 CSS px, rerun the complete suite, and redeploy
+- [x] Verify the October 5 revision at 320, 375, 767, 1024, and 1440 CSS px, rerun the complete suite, and redeploy
 
 ### Deliver
 
@@ -440,6 +440,11 @@ Record material plan changes and why they were made.
   The optional `scripts/test.ps1` wrapper still returned an empty early result
   twice, so no further wrapper changes were attempted; its underlying browser
   test page is the documented authoritative runner and passed in full.
+- October 5, 2026: Deployed the revision from public commit `45a9e02` through
+  GitHub Pages run `37376723284`. The build and deployment completed
+  successfully; the public homepage, About, stylesheet, JavaScript, and test
+  source returned HTTP 200 with the new revision markers, and the deployed
+  browser suite passed 50/50.
 
 ## Saving transcripts
 

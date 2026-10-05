@@ -12,10 +12,13 @@ Release verification for Outfit Forecast. Last updated October
 - Public GitHub Pages prototype: **HTTPS enabled and build successful** at
   `https://zehan-t.github.io/outfit-forecast/`.
 - Public-route checks: homepage, About, CSS, JavaScript, and asset manifest all
-  returned HTTP 200; the deployed browser suite passed 46/46 before the October
+  returned HTTP 200; the deployed browser suite passed 50/50 after the October
   5 revision, all outlook cards
   showed explicit calendar dates, and the public forecast rendered live Austin
   Open-Meteo data.
+- October 5 public revision: repository commit `45a9e02`; successful GitHub
+  Pages run `37376723284`; new homepage, stylesheet, main JavaScript, and test
+  markers confirmed over HTTPS.
 - Review regression tests 42â€“44 cover the distinct sun-protection/visor
   thresholds, removed weekly overview, proportional accessory scaling, and
   location-action alignment. The visor requires Hot and UV Index 3 or higher.
