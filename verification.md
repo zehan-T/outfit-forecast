@@ -22,6 +22,11 @@ Release verification for Outfit Forecast. Last updated October
   returned HTTP 200 and confirmed that “What should I wear?” is removed, the
   location card is compact, and Use my location is hidden through 767 CSS px
   while remaining in the markup for larger layouts.
+- Fine-glitter restoration: public commit `eaf6f04`; GitHub Pages run
+  `37385864495` completed successfully. Public homepage, JavaScript, stylesheet,
+  and responsive-test source returned HTTP 200 and confirmed 72 small phone
+  particles, 42 small laptop particles, repeated twinkling, and a 6.2-second
+  duration. The simplified phone search remained present.
 - Public-route checks: homepage, About, CSS, JavaScript, and asset manifest all
   returned HTTP 200; the deployed browser suite passed 50/50 after the October
   5 revision, all outlook cards

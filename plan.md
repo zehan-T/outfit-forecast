@@ -487,6 +487,11 @@ Record material plan changes and why they were made.
   preserving the simplified phone search and all other approved layout work.
   Return to 72 phone particles, 42 laptop particles, repeated twinkling, and a
   6.2-second duration; update responsive effect checks before redeployment.
+- October 5, 2026: Deployed the restored fine-glitter effect as public commit
+  `eaf6f04`; GitHub Pages run `37385864495` completed successfully. Public
+  homepage, JavaScript, stylesheet, and test source returned HTTP 200 and
+  confirmed the 72/42 responsive counts, fine size, twinkling, 6.2-second
+  duration, and preservation of the simplified phone search.
 
 ## Saving transcripts
 
