@@ -75,13 +75,12 @@ Release verification for Outfit Forecast. Last updated October
   the weather icon aligns beside the temperature; all three facts remain in one
   row; and laptop retains Fashion show in the recommendation panel.
 - The affirmation celebration is shared across phone and laptop layouts. Test
-  50 now verifies that the rejected meteor effect is absent and the restored
-  larger silver fairy-glitter layer covers the outfit, falls from top to bottom
-  for about 5.2 seconds, and restarts. It preserves the prior 20-particle phone
-  treatment and uses 24 laptop particles—twice the prior laptop density—at
-  375, 1024, and 1440 CSS px.
+  50 now verifies that the rejected meteor effect is absent and the fine silver
+  fairy-glitter layer covers the outfit, falls from top to bottom for about 6.2
+  seconds, and restarts. It uses 72 small phone particles and 42 small laptop
+  particles at 375, 1024, and 1440 CSS px.
 - Geolocation regression test 29 now covers success, permission denial, timeout,
-  and browser absence; it also checks the 20-second mobile timeout and 10-minute
+  and browser absence; it also checks the 20-second device-location timeout and 10-minute
   cached-position allowance. The interface separately explains HTTPS,
   phone-setting permission, timeout, and unavailable Location Services states.
 - Phone layout test 47 verifies Fashion show followed by the affirmation below
@@ -91,6 +90,9 @@ Release verification for Outfit Forecast. Last updated October
 - The optional `scripts/test.ps1` wrapper returned an empty early result twice
   during the October 5 run. Per `AGENTS.md`, the browser test page remains the
   authoritative runner; its captured result passed 50/50.
+- On October 7, the Developer confirmed the deployed app on a real phone and
+  computer, including one-handed phone use and the latest responsive layouts,
+  and confirmed that the public browser test page reports 50/50 passed.
 - Temporary Chromium profile directories are excluded by `.gitignore`; retained
   screenshots in `tests/artifacts/` are verification evidence.
 
@@ -122,7 +124,7 @@ Release verification for Outfit Forecast. Last updated October
 
 ## Known remaining work
 
-- Real-phone one-handed review of the deployed URL; independent HP/Apple laptop
-  functional review was completed during P1–P3.
-- Real-device screen-reader smoke check. The referenced `debrief.md` template is
-  not present in the workspace and remains an external deliverable dependency.
+- Real-device screen-reader smoke check.
+- Final deliverable audit, debrief conversation, and implementation/debrief
+  transcript saves. The referenced `debrief.md` template is not present in the
+  workspace and remains an external deliverable dependency.

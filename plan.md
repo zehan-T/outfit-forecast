@@ -124,7 +124,8 @@ and viewport/keyboard/accessibility checks at every UI checkpoint.
 - [x] Test multiple locations, current and forecast dates, recommendation categories, outfit and reminder variations, and failure states
 - [x] Verify that eligible outfit and reminder variations are selected independently rather than as fixed pairs
 - [x] Verify that returning to a previously selected date shows the same variations
-- [ ] Test the deployed app, independently of the local version, on a real phone and a laptop, including both screens, accessibility, and one-handed controls
+- [x] Test the deployed app independently on a real phone and computer, including both screens, core interactions, and one-handed phone use
+- [ ] Complete the remaining real-device screen-reader smoke check
 - [x] Prepare the usability test below using the purpose, tasks, prompts, and note format in this file
 - [x] Test with three peers and record each session
 - [x] Add the chosen improvement to this checklist, and update `spec.md` if the intended result changes
@@ -519,6 +520,10 @@ Record material plan changes and why they were made.
   `0123cc1`; GitHub Pages run `37721642535` completed successfully. Public CSS
   and test source returned HTTP 200 and confirmed the responsive 40–76px type,
   compact line height, 75%-of-form height check, and unchanged phone rules.
+- October 7, 2026: The Developer completed the real-phone functional and
+  one-handed review, confirmed the public browser suite reports 50/50, and
+  completed the computer layout/function review. The real-device screen-reader
+  smoke check remains separate and pending.
 
 ## Saving transcripts
 
