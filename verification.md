@@ -27,6 +27,11 @@ Release verification for Outfit Forecast. Last updated October
   and responsive-test source returned HTTP 200 and confirmed 72 small phone
   particles, 42 small laptop particles, repeated twinkling, and a 6.2-second
   duration. The simplified phone search remained present.
+- Compact desktop location bar: public commit `3565271`; GitHub Pages run
+  `37719893741` completed successfully. Public homepage, stylesheet, and test
+  source returned HTTP 200 and confirmed a full-width desktop form, reduced
+  vertical padding, aligned location actions, responsive width/height checks,
+  and the retained phone-only Use my location hiding rule.
 - Public-route checks: homepage, About, CSS, JavaScript, and asset manifest all
   returned HTTP 200; the deployed browser suite passed 50/50 after the October
   5 revision, all outlook cards

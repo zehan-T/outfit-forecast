@@ -496,6 +496,11 @@ Record material plan changes and why they were made.
   reducing its vertical footprint. Keep input, Search, and Use my location on
   one aligned row at 1024 CSS px and above, preserve the phone-only hiding rule,
   add width/height regression checks, and redeploy after verification.
+- October 7, 2026: Deployed the compact desktop location bar as public commit
+  `3565271`; GitHub Pages run `37719893741` completed successfully. Public
+  homepage, stylesheet, and regression-test source returned HTTP 200 and
+  confirmed the full-width form, reduced padding, screen-reader heading,
+  width/height assertions, and unchanged phone-only hiding rule.
 
 ## Saving transcripts
 
