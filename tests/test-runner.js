@@ -590,14 +590,19 @@ addTest("reviewed forecast removes the week overview and scales wearable accesso
 });
 
 addTest("phone simplifies location search while laptop retains aligned location actions", async () => {
-  for (const width of [320, 1440]) {
+  for (const width of [320, 1024, 1440]) {
     const frame = await loadForecastFrame(width);
     try {
       const document = frame.contentDocument;
       const search = document.querySelector("#location-form button[type='submit']").getBoundingClientRect();
       const location = document.querySelector("#use-location").getBoundingClientRect();
-      if (width === 1440) {
+      if (width >= 1024) {
+        const panel = document.querySelector(".control-panel").getBoundingClientRect();
+        const form = document.querySelector("#location-form").getBoundingClientRect();
+        const row = document.querySelector("#location-form .field-row").getBoundingClientRect();
         assert(Math.abs(search.top - location.top) < 2 && Math.abs(search.height - location.height) < 2, "desktop location actions are not aligned");
+        assert(form.width >= panel.width - 40 && row.width >= panel.width - 40, "desktop location search does not span the panel");
+        assert(panel.height < row.height * 3, "desktop location panel is still too tall");
       } else {
         assert(getComputedStyle(document.querySelector("#use-location")).display === "none", "phone still shows Use my location");
         assert(!document.body.textContent.includes("What should I wear?"), "removed location heading is still visible");

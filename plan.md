@@ -492,6 +492,10 @@ Record material plan changes and why they were made.
   homepage, JavaScript, stylesheet, and test source returned HTTP 200 and
   confirmed the 72/42 responsive counts, fine size, twinkling, 6.2-second
   duration, and preservation of the simplified phone search.
+- October 7, 2026: Make the desktop location form use the full panel width while
+  reducing its vertical footprint. Keep input, Search, and Use my location on
+  one aligned row at 1024 CSS px and above, preserve the phone-only hiding rule,
+  add width/height regression checks, and redeploy after verification.
 
 ## Saving transcripts
 

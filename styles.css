@@ -469,7 +469,10 @@ input::placeholder { color: #727988; }
 .link-list li { margin-bottom: 0.65rem; break-inside: avoid; }
 
 @media (min-width: 48rem) {
-  .control-panel { grid-template-columns: minmax(12rem, 0.8fr) minmax(20rem, 1.3fr); align-items: end; }
+  .control-panel { grid-template-columns: minmax(0, 1fr); gap: 0; padding: 0.85rem 1.1rem; border-radius: var(--radius-medium); }
+  .location-form { width: 100%; }
+  .location-form label { margin-bottom: 0.25rem; }
+  .location-form .field-message { margin-top: 0.3rem; font-size: 0.82rem; }
   .date-strip { grid-auto-flow: unset; grid-template-columns: repeat(7, 1fr); overflow: visible; }
   .detail-grid { grid-template-columns: 1fr 1fr; }
   .about-hero { grid-template-columns: 1.5fr 1fr; }
@@ -490,7 +493,7 @@ input::placeholder { color: #727988; }
       "character details";
     align-items: start;
   }
-  .control-panel { grid-template-columns: minmax(15rem, 0.8fr) minmax(30rem, 1.7fr); }
+  .control-panel { grid-template-columns: minmax(0, 1fr); }
   .character-panel { position: sticky; top: 1rem; }
   .fashion-show-mobile { display: none; }
   .affirmation-mobile, .affirmation-feedback-mobile { display: none; }
