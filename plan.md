@@ -125,7 +125,7 @@ and viewport/keyboard/accessibility checks at every UI checkpoint.
 - [x] Verify that eligible outfit and reminder variations are selected independently rather than as fixed pairs
 - [x] Verify that returning to a previously selected date shows the same variations
 - [x] Test the deployed app independently on a real phone and computer, including both screens, core interactions, and one-handed phone use
-- [ ] Complete the remaining real-device screen-reader smoke check
+- [x] Complete the remaining real-device screen-reader smoke check
 - [x] Prepare the usability test below using the purpose, tasks, prompts, and note format in this file
 - [x] Test with three peers and record each session
 - [x] Add the chosen improvement to this checklist, and update `spec.md` if the intended result changes
@@ -524,6 +524,10 @@ Record material plan changes and why they were made.
   one-handed review, confirmed the public browser suite reports 50/50, and
   completed the computer layout/function review. The real-device screen-reader
   smoke check remains separate and pending.
+- October 7, 2026: The Developer completed the real-device screen-reader smoke
+  check and reported that all tested navigation, controls, status feedback, and
+  decorative-layer behavior passed. Real-device functional, one-handed, and
+  assistive-technology verification is complete.
 
 ## Saving transcripts
 

@@ -116,7 +116,7 @@ Release verification for Outfit Forecast. Last updated October
 | R14 About identity, method, sources, privacy, credits | Browser tests 4, 36, 37 | Pass |
 | R15 loading/failure/retry behavior | Browser tests 26, 28, 29, 39, 41 | Pass |
 | R16 optional and critical missing data | Browser tests 10, 13, 28 | Pass |
-| R17 WCAG-oriented semantics and interaction | Browser tests 31–35, 37–41 | Pass; real assistive-technology check remains |
+| R17 WCAG-oriented semantics and interaction | Browser tests 31–35, 37–41; October 7 real-device screen-reader smoke check | Pass |
 | R18 limited local storage and clearing | Browser tests 19–23, 41 | Pass |
 | R19 Open-Meteo request contract/no secret | Browser tests 25, 27; live two-place check; secret scan | Pass |
 | R20 public HTTPS deployment | GitHub Pages build `d784d50`; public route and browser checks | Pass |
@@ -124,7 +124,6 @@ Release verification for Outfit Forecast. Last updated October
 
 ## Known remaining work
 
-- Real-device screen-reader smoke check.
 - Final deliverable audit, debrief conversation, and implementation/debrief
   transcript saves. The referenced `debrief.md` template is not present in the
   workspace and remains an external deliverable dependency.
