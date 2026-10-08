@@ -506,6 +506,11 @@ Record material plan changes and why they were made.
   left and the location form at right. Keep that cue visually hidden on phone,
   preserve the phone-only Use my location rule, update responsive assertions,
   and redeploy.
+- October 7, 2026: Deployed the restored desktop columns as public commit
+  `3c65113`; GitHub Pages run `37720495400` completed successfully. Public
+  homepage, stylesheet, and test source returned HTTP 200 and confirmed the
+  left-side cue, right-side form, desktop alignment checks, and unchanged
+  simplified phone behavior.
 
 ## Saving transcripts
 

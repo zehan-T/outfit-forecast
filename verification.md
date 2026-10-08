@@ -32,6 +32,10 @@ Release verification for Outfit Forecast. Last updated October
   source returned HTTP 200 and confirmed a full-width desktop form, reduced
   vertical padding, aligned location actions, responsive width/height checks,
   and the retained phone-only Use my location hiding rule.
+- Restored desktop location columns: public commit `3c65113`; GitHub Pages run
+  `37720495400` completed successfully. Public homepage, stylesheet, and test
+  source returned HTTP 200 and confirmed **Plan your campus day** at left, the
+  location form at right, and the phone-only hidden cue/location-button rules.
 - Public-route checks: homepage, About, CSS, JavaScript, and asset manifest all
   returned HTTP 200; the deployed browser suite passed 50/50 after the October
   5 revision, all outlook cards
