@@ -511,6 +511,10 @@ Record material plan changes and why they were made.
   homepage, stylesheet, and test source returned HTTP 200 and confirmed the
   left-side cue, right-side form, desktop alignment checks, and unchanged
   simplified phone behavior.
+- October 7, 2026: Enlarge **Plan your campus day** only on desktop so it fills
+  the left-side whitespace in two to three lines. Preserve the phone-hidden
+  treatment and right-side form, add size/height regression assertions, then
+  redeploy and verify the public stylesheet and tests.
 
 ## Saving transcripts
 

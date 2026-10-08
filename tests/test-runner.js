@@ -598,9 +598,12 @@ addTest("phone simplifies location search while laptop retains aligned location 
       const location = document.querySelector("#use-location").getBoundingClientRect();
       const heading = document.querySelector("#location-heading").getBoundingClientRect();
       if (width >= 1024) {
+        const form = document.querySelector("#location-form").getBoundingClientRect();
         assert(Math.abs(search.top - location.top) < 2 && Math.abs(search.height - location.height) < 2, "desktop location actions are not aligned");
         assert(heading.width > 1 && heading.height > 1, "desktop location cue is not visible on the left");
-        assert(heading.right < document.querySelector("#location-form").getBoundingClientRect().left, "desktop location cue and form are not in separate columns");
+        assert(heading.right < form.left, "desktop location cue and form are not in separate columns");
+        assert(parseFloat(getComputedStyle(document.querySelector("#location-heading")).fontSize) >= 40, "desktop location cue is not large enough");
+        assert(heading.height >= form.height * 0.75, "desktop location cue does not fill the left-side space");
       } else {
         assert(getComputedStyle(document.querySelector("#use-location")).display === "none", "phone still shows Use my location");
         assert(!document.body.textContent.includes("What should I wear?"), "removed location heading is still visible");

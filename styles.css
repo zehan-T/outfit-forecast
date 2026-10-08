@@ -482,7 +482,22 @@ input::placeholder { color: #727988; }
 
 @media (min-width: 48rem) {
   .control-panel { grid-template-columns: minmax(12rem, 0.8fr) minmax(20rem, 1.3fr); align-items: end; }
-  .location-heading { position: static; width: auto; height: auto; margin: 0; overflow: visible; clip: auto; white-space: normal; }
+  .location-heading {
+    position: static;
+    width: auto;
+    height: auto;
+    max-width: 9ch;
+    margin: 0;
+    overflow: visible;
+    clip: auto;
+    color: var(--ink);
+    font-size: clamp(2.5rem, 5vw, 4.75rem);
+    font-weight: 900;
+    line-height: 0.95;
+    letter-spacing: -0.05em;
+    text-transform: none;
+    white-space: normal;
+  }
   .date-strip { grid-auto-flow: unset; grid-template-columns: repeat(7, 1fr); overflow: visible; }
   .detail-grid { grid-template-columns: 1fr 1fr; }
   .about-hero { grid-template-columns: 1.5fr 1fr; }
