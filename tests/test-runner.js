@@ -596,17 +596,16 @@ addTest("phone simplifies location search while laptop retains aligned location 
       const document = frame.contentDocument;
       const search = document.querySelector("#location-form button[type='submit']").getBoundingClientRect();
       const location = document.querySelector("#use-location").getBoundingClientRect();
+      const heading = document.querySelector("#location-heading").getBoundingClientRect();
       if (width >= 1024) {
-        const panel = document.querySelector(".control-panel").getBoundingClientRect();
-        const form = document.querySelector("#location-form").getBoundingClientRect();
-        const row = document.querySelector("#location-form .field-row").getBoundingClientRect();
         assert(Math.abs(search.top - location.top) < 2 && Math.abs(search.height - location.height) < 2, "desktop location actions are not aligned");
-        assert(form.width >= panel.width - 40 && row.width >= panel.width - 40, "desktop location search does not span the panel");
-        assert(panel.height < row.height * 3, "desktop location panel is still too tall");
+        assert(heading.width > 1 && heading.height > 1, "desktop location cue is not visible on the left");
+        assert(heading.right < document.querySelector("#location-form").getBoundingClientRect().left, "desktop location cue and form are not in separate columns");
       } else {
         assert(getComputedStyle(document.querySelector("#use-location")).display === "none", "phone still shows Use my location");
         assert(!document.body.textContent.includes("What should I wear?"), "removed location heading is still visible");
         assert(document.querySelector("#location-heading").textContent === "Plan your campus day", "simplified location heading is missing");
+        assert(heading.width <= 1 && heading.height <= 1, "desktop-only location cue is visible on phone");
       }
     } finally { frame.remove(); }
   }

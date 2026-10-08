@@ -501,6 +501,11 @@ Record material plan changes and why they were made.
   homepage, stylesheet, and regression-test source returned HTTP 200 and
   confirmed the full-width form, reduced padding, screen-reader heading,
   width/height assertions, and unchanged phone-only hiding rule.
+- October 7, 2026: Reverse only the latest desktop location-bar revision.
+  Restore the earlier two-column panel with **Plan your campus day** visible at
+  left and the location form at right. Keep that cue visually hidden on phone,
+  preserve the phone-only Use my location rule, update responsive assertions,
+  and redeploy.
 
 ## Saving transcripts
 
