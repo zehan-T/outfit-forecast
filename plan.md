@@ -515,6 +515,10 @@ Record material plan changes and why they were made.
   the left-side whitespace in two to three lines. Preserve the phone-hidden
   treatment and right-side form, add size/height regression assertions, then
   redeploy and verify the public stylesheet and tests.
+- October 7, 2026: Deployed the enlarged desktop headline as public commit
+  `0123cc1`; GitHub Pages run `37721642535` completed successfully. Public CSS
+  and test source returned HTTP 200 and confirmed the responsive 40–76px type,
+  compact line height, 75%-of-form height check, and unchanged phone rules.
 
 ## Saving transcripts
 

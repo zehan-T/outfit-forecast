@@ -36,6 +36,10 @@ Release verification for Outfit Forecast. Last updated October
   `37720495400` completed successfully. Public homepage, stylesheet, and test
   source returned HTTP 200 and confirmed **Plan your campus day** at left, the
   location form at right, and the phone-only hidden cue/location-button rules.
+- Enlarged desktop location headline: public commit `0123cc1`; GitHub Pages run
+  `37721642535` completed successfully. Public CSS and test source returned HTTP
+  200 and confirmed responsive 40–76px type, a compact 0.95 line height, the
+  75%-of-form height regression check, and unchanged phone visibility rules.
 - Public-route checks: homepage, About, CSS, JavaScript, and asset manifest all
   returned HTTP 200; the deployed browser suite passed 50/50 after the October
   5 revision, all outlook cards
